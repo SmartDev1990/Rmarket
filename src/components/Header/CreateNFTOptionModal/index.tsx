@@ -61,7 +61,7 @@ export default function CreateNFTOptionModal() {
                         <div className='modal-content'>
                             <Link href={'/createself'}>
                                 <a href="" className='select-item' onClick={handleLink}>
-                                    <img src="/images/design/self-logo.png" alt="" />
+                                    <img src="/images/icons/collection.svg" alt="" />
                                     <button>YOUR SELF</button>
                                 </a>
                             </Link>
@@ -73,7 +73,7 @@ export default function CreateNFTOptionModal() {
                             </div>
                             <Link href={'/create'}>
                                 <a className='select-item' onClick={handleLink}>
-                                    <img src="/images/design/desingn-logo.png" alt="" />
+                                    <img src="/images/icons/nft.svg" alt="" />
                                     <button>DESIGN NOW</button>
                                 </a>
                             </Link>
