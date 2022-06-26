@@ -18,14 +18,14 @@ export default function NFTDetailSection() {
                         Set up your wallet
                     </div>
                     <div className='cell-content'>
-                        Add the Binance Smart Chain network to the compatible wallet you are going to use. 
-                        Add <span color='#39befd'>RICE</span> and <span style={{color: '#39befd'}}>Usdt Bsc</span> as custom tokens. 
-                        Load your wallet with <span color='#39befd'>BNB</span>.
+                        Add the Bitgert Chain network (BRISE) to the compatible wallet you are going to use.
+                        Add <font color='#39befd'>RICE</font> and <font color='#39befd'>Usdt</font> as custom tokens.
+                        Load your wallet with <font color='#39befd'>BRISE</font>.
                     </div>
                 </div>
                 <div className='cell'>
                     <div className='cell-img'>
-                        <Image src='/images/icons/sale.svg' layout='fill' objectFit='cover' />
+                        <Image src='/images/icons/collection.svg' layout='fill' objectFit='cover' />
                     </div>
                     <div className='cell-title'>
                         Add or design your NFT's
@@ -43,6 +43,17 @@ export default function NFTDetailSection() {
                     </div>
                     <div className='cell-content'>
                         You can sell at a fixed price or auction. But you can also give NFTS to whoever you want and when they sell those NFTS earn commissions.
+                    </div>
+                </div>
+                <div className='cell'>
+                    <div className='cell-img'>
+                        <Image src='/images/icons/sale.svg' layout='fill' objectFit='cover' />
+                    </div>
+                    <div className='cell-title'>
+                        Get Reward By holding BC
+                    </div>
+                    <div className='cell-content'>
+                        BC (Bored Cat) is main NFT in <font color='#39befd'>Rice Store</font>. purchase Bored Cat in private sale or public sale will have chanche to get reward.
                     </div>
                 </div>
             </div>

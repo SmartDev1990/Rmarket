@@ -13,8 +13,8 @@ function Home() {
     <Layout>
       <div className='sections'>
         <FeaturedNFTSection />
-        <BewitchingNFTSection />
         <TopNFTSection />
+        <BewitchingNFTSection />
         <NFTDetailSection />
       </div>
     </Layout>

@@ -1,8 +1,8 @@
 const AppConfig = {
-  site_name: 'RICESTORE',
-  title: 'RICESTORE',
+  site_name: 'Rice Store',
+  title: 'Rice Store',
   description:
-    '',
+    'Rice Store is the worlds of largest NFT marketplace in Bitgert chain network.',
   locale: 'en',
   network: process.env.NEXT_PUBLIC_NETWORK,
   test_network: process.env.NEXT_PUBLIC_TEST_NETWORK,

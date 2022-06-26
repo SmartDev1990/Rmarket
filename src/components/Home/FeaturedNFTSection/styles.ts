@@ -242,7 +242,7 @@ export const Section = styled('div')(({ theme }) => {
                     animation: 'rainbow-text-simple-animation-rev 1s ease forwards',
                     ...((sm || md) && {
                         fontSize: 30,
-                        maxWidth: 600,
+                        maxWidth: 700,
                         textAlign: 'center',
                     }),
                     zIndex: 2,
@@ -251,6 +251,7 @@ export const Section = styled('div')(({ theme }) => {
                     marginTop: 20,
                     fontFamily: 'poppin-light',
                     fontSize: 24,
+                    fontWeight: 500,
                     lineHeight: 1.2,
                     textAlign: 'left',
                     ...((sm || md) && {

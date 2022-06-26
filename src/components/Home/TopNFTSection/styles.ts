@@ -17,19 +17,20 @@ export const Section = styled('div')((theme: any) => {
             marginBottom: 50,
             fontSize: 24,
             lineHeight: 1.2,
-            fontWeight: 600,
+            fontWeight: 500,
             textAlign: 'center',
             '& div': {
-                fontFamily: 'poppin-bold'
+                fontFamily: 'poppin-medium'
             },
             '& .dropdown': {
                 display: 'inline-flex',
                 alignItems: 'center',
                 cursor: 'pointer',
                 justifyContent: 'center',
+                fontFamily: 'poppin-medium',
                 marginLeft: 8,
                 '& p': {
-                    fontWeight: 600,
+                    fontWeight: 500,
                     color: 'rgb(32, 129, 226)',
                     margin: 0,
                     fontSize: 24,

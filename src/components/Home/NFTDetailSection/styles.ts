@@ -39,20 +39,22 @@ export const Section = styled('div')(({theme}) => {
                     width: '100%',
                 }),
                 '& .cell-img': {
-                    width: 80,
-                    height: 80,
+                    width: 50,
+                    height: 50,
                     position: 'relative'
                 },
                 '& .cell-title': {
                     padding: 15,
                     textAlign: 'center',
-                    fontSize: '1rem',
-                    fontWeight: 600
+                    fontFamily: 'poppin-light',
+                    fontSize: '0.8rem',
+                    fontWeight: 500
                 },
                 '& .cell-content': {
                     padding: 20,
-                    fontSize: '0.8rem',
-                    textAlign: 'center',
+                    fontFamily: 'poppin-light',
+                    fontSize: '0.7rem',
+                    textAlign: 'justify',
                 }
             }
         }

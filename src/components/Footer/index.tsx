@@ -14,7 +14,7 @@ export default function Footer() {
                     <div className='footer-left'>
                         <div className='footer-section-header'>Stay in the loop</div>
                         <div className='footer-text'>
-                            Join our mailing list to stay in the loop with our newest feature releases, NFT drops, and tips and tricks for navigating OpenSea.
+                            Join our mailing list to stay in the loop with our newest feature releases, NFT drops, and tips and tricks for navigating NFT marketplace.
                         </div>
                         <form className='form-footer'>
                             <div>

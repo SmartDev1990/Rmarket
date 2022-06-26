@@ -96,7 +96,7 @@ export default function BewitchingNFTSection() {
         <div>
             <Section>
                 <div className='section-header'>
-                    <div>Notable Drops</div>
+                    <div href={'/collection'}>Top Collection</div>
                 </div>
                 <Carousel
                     swipeable={false}

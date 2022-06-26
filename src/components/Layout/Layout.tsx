@@ -21,9 +21,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"
         />
-        <title>RICESTORE</title>
-        <meta name="description" content="RICESTORE" />
-        <link rel="icon" href="/favicon.png" type="image/gif" sizes="16x16" />
+        <title>Rice Store</title>
+        <meta name="description" content="The world's of largest NFT marketplace in Bitgert chain network." />
+        <link rel="icon" href="/favicon.ico" type="image/gif" sizes="16x16" />
       </Head>
       <div>
         <header className='header'>

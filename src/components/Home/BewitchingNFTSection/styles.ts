@@ -14,9 +14,9 @@ export const Section = styled('section')(({ theme }: { theme: any }) => {
             marginTop: 50,
             marginBottom: 50,
             fontSize: 24,
-            fontWeight: 600,
+            fontWeight: 500,
             '& div': {
-                fontFamily: 'poppin-Bold'
+                fontFamily: 'poppin-medium'
             }
         },
         '& .react-multiple-carousel__arrow': {
