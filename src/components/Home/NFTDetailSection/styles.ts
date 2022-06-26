@@ -11,7 +11,7 @@ export const Section = styled('div')(({theme}) => {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '3% 10%',
+        padding: '5%',
         '& .section-header': {
             marginTop: 50,
             paddingBottom: 50,

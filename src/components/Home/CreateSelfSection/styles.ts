@@ -138,7 +138,7 @@ export const UploadSection = styled('div')(({ theme }) => {
                             justifyContent: 'center',
                             flexDirection: 'column',
                             height: '100%',
-                            fontSize: '1.5rem',
+                            fontSize: '1rem',
                             fontWeight: 500,
                             color: 'rgb(204, 204, 204)',
                             '& .upload-img': {
@@ -208,21 +208,21 @@ export const MintSection = styled('div')(({ theme, loading }: { theme?: any, loa
             flexDirection: 'column'
         },
         '& .item-preview': {
-            width: '50%',
+            width: '100%',
             padding: 30,
             [theme.breakpoints.down('sm')]: {
                 flex: 1
             },
         },
         '& .item-descriptioin': {
-            width: '50%',
+            width: '100%',
             padding: 30,
             [theme.breakpoints.down('sm')]: {
                 flex: 1
             },
             '& .description-header': {
-                fontSize: 30,
-                fontWeight: 600,
+                fontSize: 20,
+                fontWeight: 500,
                 textAlign: 'center'
             },
             '& .description-summary': {
@@ -707,12 +707,12 @@ export const SwitchButton = styled('span')(
     height: 20px;
     margin: 10px;
     cursor: pointer;
-  
+
     &.${switchUnstyledClasses.disabled} {
       opacity: 0.5;
       cursor: not-allowed;
     }
-  
+
     & .${switchUnstyledClasses.track} {
       background: ${theme.palette.mode === 'dark' ? grey[600] : grey[400]};
       border-radius: 10px;
@@ -721,7 +721,7 @@ export const SwitchButton = styled('span')(
       width: 100%;
       position: absolute;
     }
-  
+
     & .${switchUnstyledClasses.thumb} {
       display: block;
       width: 14px;
@@ -733,24 +733,24 @@ export const SwitchButton = styled('span')(
       position: relative;
       transition: all 200ms ease;
     }
-  
+
     &.${switchUnstyledClasses.focusVisible} .${switchUnstyledClasses.thumb} {
       background-color: ${grey[500]};
       box-shadow: 0 0 1px 8px rgba(0, 0, 0, 0.25);
     }
-  
+
     &.${switchUnstyledClasses.checked} {
       .${switchUnstyledClasses.thumb} {
         left: 22px;
         top: 3px;
         background-color: #fff;
       }
-  
+
       .${switchUnstyledClasses.track} {
         background: ${blue[500]};
       }
     }
-  
+
     & .${switchUnstyledClasses.input} {
       cursor: inherit;
       position: absolute;
