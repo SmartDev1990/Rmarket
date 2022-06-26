@@ -6,7 +6,7 @@ export const Section = styled('div')(({ theme: any }) => {
     const sm = useMediaQuery('(max-width:600px)');
     const md = useMediaQuery('(max-width:900px)');
 
-    return ({    
+    return ({
         color: 'rgb(255, 255, 255)',
         height: 'auto',
         display: 'flex',
@@ -15,7 +15,7 @@ export const Section = styled('div')(({ theme: any }) => {
         width: '100%',
         backgroundColor: 'rgb(24, 104, 183)',
         '& .footer-container': {
-            width: '80%',
+            width: '95%',
             '& .footer-row': {
                 paddingBottom: 40,
                 marginBottom: 20,
@@ -39,7 +39,8 @@ export const Section = styled('div')(({ theme: any }) => {
                     }),
                     '& .footer-section-header': {
                         color: 'rgb(255, 255, 255)',
-                        fontSize: 30,
+                        fontSize: 20,
+                        lineHeight: 1,
                         fontWeight: 600,
                         marginBottom: 8,
                         marginTop: 8,
@@ -74,7 +75,7 @@ export const Section = styled('div')(({ theme: any }) => {
                             borderRadius: 10,
                             marginLeft: 10,
                             display: 'inline-block',
-                            fontSize: 20,
+                            fontSize: 10,
                             color: '#fff',
                             backgroundColor: 'rgb(32, 129, 226)',
                             lineHeight: 1,
@@ -111,7 +112,7 @@ export const Section = styled('div')(({ theme: any }) => {
                     width: '50%',
                     display: 'flex',
                     flexDirection: 'column',
-                    alignItems: 'flex-end',
+                    alignItems: 'center',
                     textAlign: 'left',
                     ...( ( sm || md ) && {
                         width: '100%',
@@ -122,6 +123,7 @@ export const Section = styled('div')(({ theme: any }) => {
                         color: 'rgb(255, 255, 255)',
                         fontSize: 30,
                         fontWeight: 600,
+                        alignItems: 'center',
                         marginBottom: 8,
                         marginTop: 8,
                     },
@@ -177,7 +179,7 @@ export const Section = styled('div')(({ theme: any }) => {
                         color: '#fff',
                         backgroundColor: 'rgb(32, 129, 226)',
                         lineHeight: 1,
-                        padding: '10px',
+                        padding: '8px',
                         transition: 'all 0.3s',
                         position: 'relative',
                         textTransform: 'capitalize',

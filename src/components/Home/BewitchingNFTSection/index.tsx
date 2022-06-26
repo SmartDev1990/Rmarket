@@ -5,7 +5,7 @@ import {
     Skeleton
 } from '@mui/material';
 
-import Carousel from "react-multi-carousel";
+import  Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { Section, NFTItem } from './styles';
 import PageLoading from '@/components/PageLoading';
@@ -96,7 +96,7 @@ export default function BewitchingNFTSection() {
         <div>
             <Section>
                 <div className='section-header'>
-                    <div>BewitchingNFTs</div>
+                    <div>Notable Drops</div>
                 </div>
                 <Carousel
                     swipeable={false}

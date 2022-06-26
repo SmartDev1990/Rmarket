@@ -6,7 +6,7 @@ const Loader = styled('div')(({ theme, loading } : { theme?:any, loading: any}) 
         position: 'fixed',
         top: 0,
         left: 0,
-        right: 0, 
+        right: 0,
         bottom: 0,
         margin: 0,
         padding: 0,
@@ -35,7 +35,7 @@ const Loader = styled('div')(({ theme, loading } : { theme?:any, loading: any}) 
             borderRadius: '50%',
             fontSize: 30,
             textTransform: 'uppercase',
-            color: 'white',
+            color: 'red',
             fontWeight: 700,
             '& img': {
                 opacity: 0.7,
@@ -101,8 +101,8 @@ const PageLoading = ({loading}: {loading: any}) => {
                     <span></span>
                     <span></span>
                 </div>
-                {/* <div className='logo'><img src='/images/logo.png'/></div> */}
-                <div className='logo'>Magic</div>
+                <div className='logo'><img src='/images/logo.png'/></div>
+                <div className='logo'>RICESTORE</div>
             </div>
         </Loader>
     )

@@ -171,9 +171,9 @@ export const TokenDropDownMenu = ({ disabled, setInputData, inputData }: { disab
     const [text, setText] = React.useState('BNB');
 
     const list = [
-        { label: 'BNB', value: Config.Token.BNB.address },
-        { label: 'AYRA', value: Config.Token.AYRA.address },
-        { label: 'ITHD', value: Config.Token.ITHD.address },
+        { label: 'BNB', value: Config.Token.BRISE.address },
+        { label: 'USDT', value: Config.Token.USDT.address },
+        { label: 'RICE', value: Config.Token.RICE.address },
     ]
 
     const handleClick = () => {

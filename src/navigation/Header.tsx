@@ -47,7 +47,7 @@ export default function HeaderComponent(props: any) {
             <div className='magics-logo'>
               <img src="/images/logo.png" />
               <div className='logo-title'>
-                MAGICS
+                RiceStore
               </div>
             </div>
           </Link>
@@ -58,23 +58,28 @@ export default function HeaderComponent(props: any) {
           <div className='menu-group'>
             <div className='menu-button-group'>
               <ExplorerMenu />
-              {/* <StatusMenu /> */}
+              <StatusMenu />
               <div className='createNFT-button'>
                 <CreateNFTOptionModal />
               </div>
+              {/*  <Link href='/createself'>
+                <div className='createNFT-button' href='/createself'>
+                    Create NFT
+                </div>
+              </Link>  */}
             </div>
           </div>
-          <div className='dropMenuIcon menu-button' onClick={handleDropMenu}>
+          {/* <div className='dropMenuIcon menu-button' onClick={handleDropMenu}>
             {dropMenuOpen ? <CloseIcon /> : <MenuIcon />}
-          </div>
+          </div> */}
           <div className='themeIcon' onClick={colorMode.toggleColorMode}>
             {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
           </div>
-          <div className='walletIcon' onClick={setToggleWalletList}>
-            <AccountBalanceWalletOutlinedIcon fontSize='large' />
-          </div>
           <div className='avatarIcon'>
             <Account />
+          </div>
+          <div className='walletIcon' onClick={setToggleWalletList}>
+            <AccountBalanceWalletOutlinedIcon fontSize='large' />
           </div>
         </Toolbar>
       </AppBar>

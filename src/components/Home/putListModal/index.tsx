@@ -18,15 +18,15 @@ import Web3 from "web3";
 import { useWeb3React } from "@web3-react/core";
 import { actionGetMarketItem } from '@/store/actions';
 const tokenImg = {
-    [Config.Token.BNB.address]: '/images/token/bnb.png',
-    [Config.Token.AYRA.address]: '/images/token/ayra.png',
-    [Config.Token.ITHD.address]: '/images/token/ithd.png'
+    [Config.Token.BRISE.address]: '/images/token/bnb.png',
+    [Config.Token.USDT.address]: '/images/token/ayra.png',
+    [Config.Token.RICE.address]: '/images/token/ithd.png'
 }
 
 const tokenName = {
-    [Config.Token.BNB.address]: 'BNB',
-    [Config.Token.AYRA.address]: 'AYRA',
-    [Config.Token.ITHD.address]: 'ITHD'
+    [Config.Token.BRISE.address]: 'BRISE',
+    [Config.Token.USDT.address]: 'USDT',
+    [Config.Token.RICE.address]: 'RICE'
 }
 
 export default function PutListModal({ modal, setModal, item, handleLoading }: { modal: any, setModal: any, item: any, handleLoading: any }) {
@@ -166,7 +166,7 @@ export default function PutListModal({ modal, setModal, item, handleLoading }: {
                             </div>
                         </div>
                         <div className='wallet-detail'>
-                            Your wallet balance is below 0.05 BNB. The next steps require small transaction fees, so you may have to deposit additional funds to complete them
+                            Your wallet balance is below 0.05 BRISE. The next steps require small transaction fees, so you may have to deposit additional funds to complete them
                         </div>
                         <div className='progress-detail'>
                             {/* <Accordion expanded={summaryExpanded === 'panel1'} onChange={handleSummaryChange('panel1')} disableGutters elevation={0}>
@@ -213,4 +213,3 @@ export default function PutListModal({ modal, setModal, item, handleLoading }: {
         </Dialog>
     );
 }
-

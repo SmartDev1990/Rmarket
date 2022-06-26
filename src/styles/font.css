@@ -38,32 +38,32 @@
     font-family: "Kanit";
     src: url("/fonts/Kanit/Kanit-Medium.ttf");
   }
-  
+
   * {
-    font-family: poppin-medium; 
+    font-family: poppin-medium;
   }
 
   .featured-subheader {
-    font-family: poppin-medium; 
+    font-family: poppin-medium;
   }
   .magics-logo .logo-title {
-    font-family: Nosifer; 
-  }  
+    font-family: Nosifer;
+  }
   .put-list-modal .item-detail .content .name {
-    font-family: upheaval; 
+    font-family: upheaval;
   }
   .gift-list * {
-    font-family: upheaval; 
+    font-family: upheaval;
   }
   .hastag {
-    font-family: coolvetica; 
+    font-family: coolvetica;
   }
   .marketplace-title {
     font-family: poppin-bold; 
   }
   .card-image-text-area .name {
-    font-family: poppin-bold; 
+    font-family: poppin-bold;
   }
   .collection-title {
-    font-family: poppin-bold; 
+    font-family: poppin-bold;
   }

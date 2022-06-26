@@ -3,7 +3,7 @@ import Layout from '@/components/Layout/Layout';
 import EditAssetsEditSection from '@/components/Home/MarketplaceSection/Collection/editAsset';
 
 function Assets() {
-  return (  
+  return (
     <Layout>
       <EditAssetsEditSection />
     </Layout>

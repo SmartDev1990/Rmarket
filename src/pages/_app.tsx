@@ -18,9 +18,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
   const handleRouteChange = (url: any) => {
-    // window.gtag("config", "[Tracking ID]", {
-    //   page_path: url,
-    // });
+    window.gtag("config", "[Tracking ID]", {
+      page_path: url,
+    });
   };
 
   useEffect(() => {

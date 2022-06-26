@@ -13,21 +13,24 @@ export const Section = styled('div')(({theme}) => {
         justifyContent: 'center',
         padding: '3% 10%',
         '& .section-header': {
-            margin: 50,
-            fontSize: 40,
+            marginTop: 50,
+            paddingBottom: 50,
+            fontSize: 24,
+            lineHeight: 1.2,
             fontWeight: 500,
             textAlign: 'center',
-            fontFamily: 'poppin-bold'
+            fontFamily: 'poppin-light'
         },
         '& .section-body': {
             display: 'flex',
+            marginTop: -30,
             alignItems: 'center',
             justifyContent: 'center',
             ...( ( sm || md ) && {
                 flexWrap: 'wrap'
             }),
             '& .cell': {
-                padding: 20,
+                padding: 10,
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
@@ -43,12 +46,12 @@ export const Section = styled('div')(({theme}) => {
                 '& .cell-title': {
                     padding: 15,
                     textAlign: 'center',
-                    fontSize: '1.5rem',
-                    fontWeight: 700
+                    fontSize: '1rem',
+                    fontWeight: 600
                 },
                 '& .cell-content': {
                     padding: 20,
-                    fontSize: '1rem',
+                    fontSize: '0.8rem',
                     textAlign: 'center',
                 }
             }

@@ -258,7 +258,7 @@ const UploadStep = ({ setIpfsImage, handleNext, setHastag }: { setIpfsImage: any
                                 </div>
                             </div>
                             <div>
-                                <div className="image-hastag">
+                                {/* <div className="image-hastag">
                                     <div className='sub'>
                                         <div className="sub-title">Select the Hastag in your NFT.</div>
                                         <SwitchUnstyled className='hastag' component={SwitchButton} onChange={handleHastagSwitch} />
@@ -266,7 +266,7 @@ const UploadStep = ({ setIpfsImage, handleNext, setHastag }: { setIpfsImage: any
                                     <div className="sub-content">
                                         <HasTagDropDownMenu setImgHastag={setImgHastag} imgHastag={imgHastag} disabled={!hastagSelected} />
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     )
@@ -295,9 +295,9 @@ const MintStep = ({ handleNext, ipfsImage, hastag }: { handleNext: any, ipfsImag
         toast({ type, message });
     }, []);
     const tokenType = [
-        Config.Token.BNB.address,
-        Config.Token.AYRA.address,
-        Config.Token.ITHD.address,
+        Config.Token.BRISE.address,
+        Config.Token.USDT.address,
+        Config.Token.RICE.address,
     ];
     const [mintData, setMintData] = React.useState({
         collectionId: 0,
@@ -334,8 +334,8 @@ const MintStep = ({ handleNext, ipfsImage, hastag }: { handleNext: any, ipfsImag
                 hastag: mintData.hastag,
             }
             const added = await ipfs.add(JSON.stringify(metaData));
-            const ipfsUrl = added.path;
-            // const ipfsUrl = '123123123';
+            // const ipfsUrl = added.path;
+            const ipfsUrl = '123123123';
 
             const web3 = new Web3(library.provider);
             const NFT = new web3.eth.Contract(
@@ -350,18 +350,18 @@ const MintStep = ({ handleNext, ipfsImage, hastag }: { handleNext: any, ipfsImag
                 balance = await web3.eth.getBalance(account);
             }
             else if (mintData.mint_token_type === 1) {
-                const ContractAYRA = new web3.eth.Contract(
-                    Config.Token.AYRA.abi as [],
-                    Config.Token.AYRA.address as string
+                const ContractUSDT = new web3.eth.Contract(
+                    Config.Token.USDT.abi as [],
+                    Config.Token.USDT.address as string
                 );
-                balance = await ContractAYRA.methods.balanceOf(account).call();
+                balance = await ContractUSDT.methods.balanceOf(account).call();
             }
             else if (mintData.mint_token_type === 2) {
-                const ContractITHD = new web3.eth.Contract(
-                    Config.Token.ITHD.abi as [],
-                    Config.Token.ITHD.address as string
+                const ContractRICE = new web3.eth.Contract(
+                    Config.Token.RICE.abi as [],
+                    Config.Token.RICE.address as string
                 );
-                balance = await ContractITHD.methods.balanceOf(account).call();
+                balance = await ContractRICE.methods.balanceOf(account).call();
             }
             let totalPrice = new BigNumber(total_price).multipliedBy(BIG_TEN.pow(18));
 
@@ -413,14 +413,14 @@ const MintStep = ({ handleNext, ipfsImage, hastag }: { handleNext: any, ipfsImag
 
     const approveTokenToNFT = async () => {
         const web3 = new Web3(library.provider);
-        const ContractITHD = new web3.eth.Contract(
-            Config.Token.ITHD.abi,
-            Config.Token.ITHD.address
+        const ContractRICE = new web3.eth.Contract(
+            Config.Token.RICE.abi,
+            Config.Token.RICE.address
         );
 
-        const ContractAYRA = new web3.eth.Contract(
-            Config.Token.AYRA.abi,
-            Config.Token.AYRA.address
+        const ContractUSDT = new web3.eth.Contract(
+            Config.Token.USDT.abi,
+            Config.Token.USDT.address
         );
 
         const approve = async (contract: any) => {
@@ -430,23 +430,23 @@ const MintStep = ({ handleNext, ipfsImage, hastag }: { handleNext: any, ipfsImag
 
             if (Math.floor(allowanceBalanceof / 1e18) < 100) {
                 await contract.methods
-                    .approve(Config.NFT.address, '100000000000000000000000000')
+                    .approve(Config.NFT.address, '1000000000000000000')
                     .send({ from: account })
                     .once('transactionHash', () => {
-                        notify('info', 'Approving purchase with ITHD');
+                        notify('info', 'Approving purchase with Brise');
                     })
                     .then((_tx: any) => {
-                        notify('success', 'You have approved the purchase  with ITHD');
+                        notify('success', 'You have approved the purchase  with Brise');
                     })
                     .catch((e: any) => {
                         if (e.code === 4001) {
-                            notify('error', 'You need to approve the spending of ITHD in your wallet');
+                            notify('error', 'You need to approve the spending of Brise in your wallet');
                         }
                     });
             }
         }
-        await approve(ContractITHD);
-        await approve(ContractAYRA);
+        await approve(ContractRICE);
+        await approve(ContractUSDT);
     }
 
     React.useEffect(() => {
@@ -455,8 +455,8 @@ const MintStep = ({ handleNext, ipfsImage, hastag }: { handleNext: any, ipfsImag
         const hastag_flag = mintData.hastag_flag;
         let price = new BigNumber(0);
 
-        if ((mint_token_type == 0) && hastag_flag) price = new BigNumber(Config.bnbPrice).multipliedBy(2);
-        if ((mint_token_type == 0) && !hastag_flag) price = new BigNumber(Config.bnbPrice);
+        if ((mint_token_type == 0) && hastag_flag) price = new BigNumber(Config.brisePrice).multipliedBy(2);
+        if ((mint_token_type == 0) && !hastag_flag) price = new BigNumber(Config.brisePrice);
         if ((mint_token_type == 1) && hastag_flag) price = new BigNumber(Config.ayraPrice).multipliedBy(2);
         if ((mint_token_type == 1) && !hastag_flag) price = new BigNumber(Config.ayraPrice);
         if ((mint_token_type == 2) && hastag_flag) price = new BigNumber(Config.ithdPrice).multipliedBy(2);
@@ -677,12 +677,12 @@ const HasTagDropDownMenu = ({ setImgHastag, imgHastag, disabled }: { setImgHasta
 }
 const TokenDropDownMenu = ({ setMintData, mintData }: { setMintData: any, mintData: any }) => {
     const [open, setOpen] = React.useState(false);
-    const [text, setText] = React.useState('BNB');
+    const [text, setText] = React.useState('BRISE');
 
     const list = [
-        { label: 'BNB', value: 0 },
-        { label: 'AYRA', value: 1 },
-        { label: 'ITHD', value: 2 },
+        { label: 'BRISE', value: 0 },
+        { label: 'USDT', value: 1 },
+        { label: 'RICE', value: 2 },
     ]
 
     const handleClick = () => {

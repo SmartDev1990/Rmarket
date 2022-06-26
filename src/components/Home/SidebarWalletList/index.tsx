@@ -55,12 +55,12 @@ export default function SidebarWalletList(props: any) {// the function is being 
     const router = useRouter();
     const { ref } = router.query;
     const { openwalletlist, setToggleWalletList } = props;
-    const [BNBValue, setBNBValue] = React.useState('0');
-    const [AYRAValue, setAYRAValue] = React.useState('0');
-    const [ITHDValue, setITHDValue] = React.useState('0');
-    const [rewardBNBValue, setRewardBNBValue] = React.useState('0');
-    const [rewardAYRAValue, setRewardAYRAValue] = React.useState('0');
-    const [rewardITHDValue, setRewardITHDValue] = React.useState('0');
+    const [BRISEValue, setBRISEValue] = React.useState('0');
+    const [USDTValue, setUSDTValue] = React.useState('0');
+    const [RICEValue, setRICEValue] = React.useState('0');
+    const [rewardBRISEValue, setRewardBRISEValue] = React.useState('0');
+    const [rewardUSDTValue, setRewardUSDTValue] = React.useState('0');
+    const [rewardRICEValue, setRewardRICEValue] = React.useState('0');
     const triedEager = useEagerConnect();
     const { activate, active, account, deactivate, connector, error, setError, library }: any = useWeb3React();
     const [activatingConnector, setActivatingConnector] = React.useState(undefined);
@@ -106,21 +106,15 @@ export default function SidebarWalletList(props: any) {// the function is being 
                     method: "wallet_addEthereumChain",
                     params: [
                         {
-                            chainId: `0x${Config.netId.toString(16)}`,
-                            chainName: "BNB Test NET",
-                            rpcUrls: [
-                                // "https://data-seed-prebsc-1-s1.binance.org:8545/",
-                                AppConfig.test_rpc_url
-                            ],
+                            chainId: `32520`,
+                            chainName: "Brise Mainnet",
+                            rpcUrls: ["https://serverrpc.com"],
                             nativeCurrency: {
-                                name: "BNB",
-                                symbol: "BNB",
+                                name: "BRISE",
+                                symbol: "BRISE",
                                 decimals: 18,
                             },
-                            blockExplorerUrls: [
-                                // "https://testnet.bscscan.com",
-                                AppConfig.test_network
-                            ],
+                            blockExplorerUrls: ["https://brisescan.com/"],
                         },
                     ],
                 })
@@ -182,7 +176,7 @@ export default function SidebarWalletList(props: any) {// the function is being 
     }
 
     const handleClaim = async () => {
-        if ((rewardBNBValue == '0' && rewardAYRAValue == '0' && rewardITHDValue == '0')) return notify('error', 'No reward for you')
+        if ((rewardBRISEValue == '0' && rewardUSDTValue == '0' && rewardRICEValue == '0')) return notify('error', 'No reward for you')
 
         const web3 = new Web3(library.provider);
         const Market = new web3.eth.Contract(
@@ -210,23 +204,23 @@ export default function SidebarWalletList(props: any) {// the function is being 
 
     const valueload = async () => {
         const web3 = new Web3(library.provider);
-        const ContractITHD = new web3.eth.Contract(
-            Config.Token.ITHD.abi,
-            Config.Token.ITHD.address
+        const ContractRICE = new web3.eth.Contract(
+            Config.Token.RICE.abi,
+            Config.Token.RICE.address
         );
 
-        const ContractAYRA = new web3.eth.Contract(
-            Config.Token.AYRA.abi,
-            Config.Token.AYRA.address
+        const ContractUSDT = new web3.eth.Contract(
+            Config.Token.USDT.abi,
+            Config.Token.USDT.address
         );
 
         const bnbValue = await web3.eth.getBalance(account);
-        const ithdValue = await ContractITHD.methods.balanceOf(account).call();
-        const ayraValue = await ContractAYRA.methods.balanceOf(account).call();
+        const riceValue = await ContractRICE.methods.balanceOf(account).call();
+        const usdtValue = await ContractUSDT.methods.balanceOf(account).call();
 
-        setBNBValue(convertValuetoString(fromWei(web3, bnbValue)));
-        setITHDValue(convertValuetoString(fromWei(web3, ithdValue)));
-        setAYRAValue(convertValuetoString(fromWei(web3, ayraValue)));
+        setBRISEValue(convertValuetoString(fromWei(web3, bnbValue)));
+        setRICEValue(convertValuetoString(fromWei(web3, riceValue)));
+        setUSDTValue(convertValuetoString(fromWei(web3, usdtValue)));
 
     }
 
@@ -240,9 +234,9 @@ export default function SidebarWalletList(props: any) {// the function is being 
 
         try {
             const reward = await Market.methods.rewards(account).call();
-            setRewardBNBValue(convertValuetoString(fromWei(web3, reward.bnb)).toString());
-            setRewardITHDValue(convertValuetoString(fromWei(web3, reward.ayra)).toString());
-            setRewardAYRAValue(convertValuetoString(fromWei(web3, reward.ithd)).toString());
+            setRewardBRISEValue(convertValuetoString(fromWei(web3, reward.bnb)).toString());
+            setRewardRICEValue(convertValuetoString(fromWei(web3, reward.usdt)).toString());
+            setRewardUSDTValue(convertValuetoString(fromWei(web3, reward.rice)).toString());
         } catch (err: any) {
             if (err.code == 4001) notify('error', err.message);
             else notify('error', 'Error get reward');
@@ -278,7 +272,7 @@ export default function SidebarWalletList(props: any) {// the function is being 
         } else {
             setIsSelectingWallet(true);
         }
-        setAffiliateLink(`https://nftmagics-frontend.herokuapp.com/?ref=${account}`);
+        setAffiliateLink(`https://RICESTORE-frontend.herokuapp.com/?ref=${account}`);
     }, [account, active, error])
 
     return (
@@ -337,25 +331,25 @@ export default function SidebarWalletList(props: any) {// the function is being 
                                         <li className='token-item'>
                                             <div className="token">
                                                 <img src="/images/token/bnb.png" className="tokenimg" ></img>
-                                                <span>{BNBValue} &nbsp;BNB</span>
+                                                <span>{BRISEValue} &nbsp;BRISE</span>
                                             </div>
                                         </li>
                                         <li className='token-item'>
                                             <div className="token">
-                                                <img src="/images/token/ayra.png" className="tokenimg" ></img>
-                                                <span>{AYRAValue} &nbsp;AYRA</span>
+                                                <img src="/images/token/usdt.png" className="tokenimg" ></img>
+                                                <span>{USDTValue} &nbsp;USDT</span>
                                             </div>
                                         </li>
                                         <li className='token-item'>
                                             <div className="token">
-                                                <img src="/images/token/ithd.png" className="tokenimg" ></img>
-                                                <span>{ITHDValue} &nbsp;ITHD</span>
+                                                <img src="/images/token/rice.png" className="tokenimg" ></img>
+                                                <span>{RICEValue} &nbsp;RICE</span>
                                             </div>
                                         </li>
                                     </ul>
                                 </div>
                                 {
-                                    (rewardBNBValue !== '0' || rewardAYRAValue !== '0' || rewardITHDValue !== '0') && (
+                                    (rewardBRISEValue !== '0' || rewardUSDTValue !== '0' || rewardRICEValue !== '0') && (
                                         <>
                                             <div className='reward-header'>
                                                 <p>
@@ -367,19 +361,19 @@ export default function SidebarWalletList(props: any) {// the function is being 
                                                     <li className='token-item'>
                                                         <div className="token">
                                                             <img src="/images/token/bnb.png" className="tokenimg" ></img>
-                                                            <span>{rewardBNBValue} &nbsp;BNB</span>
+                                                            <span>{rewardBRISEValue} &nbsp;BRISE</span>
                                                         </div>
                                                     </li>
                                                     <li className='token-item'>
                                                         <div className="token">
-                                                            <img src="/images/token/ayra.png" className="tokenimg" ></img>
-                                                            <span>{rewardAYRAValue} &nbsp;AYRA</span>
+                                                            <img src="/images/token/usdt.png" className="tokenimg" ></img>
+                                                            <span>{rewardUSDTValue} &nbsp;USDT</span>
                                                         </div>
                                                     </li>
                                                     <li className='token-item'>
                                                         <div className="token">
-                                                            <img src="/images/token/ithd.png" className="tokenimg" ></img>
-                                                            <span>{rewardITHDValue} &nbsp;ITHD</span>
+                                                            <img src="/images/token/rice.png" className="tokenimg" ></img>
+                                                            <span>{rewardRICEValue} &nbsp;RICE</span>
                                                         </div>
                                                     </li>
                                                 </ul>
@@ -454,12 +448,12 @@ export default function SidebarWalletList(props: any) {// the function is being 
                             <div className='body-content'>
                                 <ul className='wallet-list'>
                                     <li className='wallet-item'>
-                                        <button onClick={() => notify('warning', 'AyraMask is comming soon')}>
+                                        <button onClick={() => notify('warning', 'UsdtMask is comming soon')}>
                                             <div className='wallet-img'>
                                                 <img src='/images/wallet/9.png' />
                                             </div>
                                             <div className='wallet-name'>
-                                                <span>AyraMask</span>
+                                                <span>UsdtMask</span>
                                             </div>
                                             <div className='wallet-info'></div>
                                         </button>
@@ -572,7 +566,7 @@ const WalletDropDownMenu = ({ onDeactiveWallet, account, cWallet }: { onDeactive
                         </li>
                         <li>
                             <Link
-                                href={`https://bscscan.com/address/${account}`}
+                                href={`https://brisescan.com/address/${account}`}
                                 target="_blank"
                                 underline="none"
                             >

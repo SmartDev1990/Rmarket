@@ -33,9 +33,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import PageLoading from '@/components/PageLoading';
 
 const tokenImg = {
-    [Config.Token.BNB.address]: '/images/token/bnb.png',
-    [Config.Token.AYRA.address]: '/images/token/ayra.png',
-    [Config.Token.ITHD.address]: '/images/token/ithd.png'
+    [Config.Token.BRISE.address]: '/images/token/bnb.png',
+    [Config.Token.USDT.address]: '/images/token/ayra.png',
+    [Config.Token.RICE.address]: '/images/token/ithd.png'
 }
 export default function EditAssets() {
     const router = useRouter()
@@ -202,8 +202,8 @@ export default function EditAssets() {
         if (marketItem) {
             const salePrice = marketItem.price ? fromWei(web3, marketItem.price) : 0;
             let decimal = Config.bnbToUsd;
-            if(marketItem.saleToken == Config.Token.AYRA.address) decimal = Config.ayraToUsd;
-            if(marketItem.saleToken == Config.Token.ITHD.address) decimal = Config.ithdToUsd;
+            if(marketItem.saleToken == Config.Token.USDT.address) decimal = Config.ayraToUsd;
+            if(marketItem.saleToken == Config.Token.RICE.address) decimal = Config.ithdToUsd;
             const usdPrice = new BigNumber(salePrice).multipliedBy(decimal).toFixed(2, BigNumber.ROUND_DOWN).toString();
             handleItemChange('collectionId', marketItem.collectionId);
             handleItemChange('collectionName', marketItem.collectionName);

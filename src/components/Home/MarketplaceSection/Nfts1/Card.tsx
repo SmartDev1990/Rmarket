@@ -301,11 +301,11 @@ const NFTCard = ({ item, empty, width, height, timeAgo }: { item: any, empty: an
 
     if (item?.saleToken == 1) {
         token_img = '/images/token/ayra.png';
-        token_name = 'AYRA';
+        token_name = 'USDT';
     }
     if (item?.saleToken == 2) {
         token_img = '/images/token/ithd.png';
-        token_name = 'ITHD';
+        token_name = 'RICE';
     }
 
     const imgLoader = ({ src, width, quality }: { src: any, width?: any, quality?: any }) => {

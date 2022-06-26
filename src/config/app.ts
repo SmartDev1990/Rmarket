@@ -1,31 +1,29 @@
 import abi from "./abi";
 
 export default {
-    // netId: 56, //mainId
-    netId: 97, //testId
+    netId: 32520, //mainId
     updateTime: 35000,
-    swapFee: 0.0025,
+    swapFee: 100000,
     Token: {
-        ITHD: {
-            address: "0x88366934F5aF1D5ce2592cb549d346F320dc13b3",
-            abi: abi.ITHD
+        RICE: {
+            address: "0x5d0C865e353837e89505e5189E06873B3C88C0C4",
+            abi: abi.RICE
         },
-        AYRA: {
-            address: "0x911bA403442dD7736bf3f76b88227Fb043BDFAEa",
-            // address: "0xE976E9Cc54817074922Eb5426F2Be74cd2883f17",
-            abi: abi.AYRA
+        USDT: {
+            address: "0xDe14b85cf78F2ADd2E867FEE40575437D5f10c06",
+            abi: abi.USDT
         },
-        BNB: {
-            address: "0x094616F0BdFB0b526bD735Bf66Eca0Ad254ca81F",
-            abi: abi.BNB
+        BRISE: {
+            address: "0x0eb9036cbE0f052386f36170c6b07eF0a0E3f710",
+            abi: abi.BRISE
         }
     },
     NFT: {
-        address: "0xf97BD7d9871655a3e19224354Ffe1e4CA2C4C053",
+        address: "0xB31BEA278EAF0425aD8d88f0D2524A3cBB638aE7",
         abi: abi.NFT
     },
     Market: {
-        address: "0x351d0F13075706E69b2BdD3532aD7824fd36A97b",
+        address: "0x956C9ced2E5dcd14Dc65bA85a7c5653DEA0A0e1A",
         abi: abi.MARKET
     },
     Lottery: {
@@ -33,13 +31,13 @@ export default {
         abi: abi.LOTTERY
     },
     InfuraId: 'b596546b8ae94aa883f9830c1fw90767f',
-    bnbPrice: 2100000000000000,
-    ayraPrice: 20000000000000000000,
-    ithdPrice: 29000000000000000000,
-    bnbTicketPrice: 1050000000000000,
-    ayraTicketPrice: 10000000000000000000,
-    ithdTicketPrice: 14500000000000000000,
-    bnbToUsd: 370,
-    ayraToUsd: 0.025,
-    ithdToUsd: 0.017,
+    brisePrice: 0.00000035,
+    usdtPrice: 1,
+    ricePrice: 100,
+    briseTicketPrice: 1050000000000000,
+    usdtTicketPrice: 10000000000000000000,
+    riceTicketPrice: 14500000000000000000,
+    briseToUsd: 0.000001,
+    usdtToUsd: 1,
+    riceToUsd: 100,
 }

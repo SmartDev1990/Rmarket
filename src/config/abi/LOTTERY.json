@@ -147,12 +147,12 @@
                     },
                     {
                         "internalType": "uint256",
-                        "name": "totalAmountAYRA",
+                        "name": "totalAmountUSDT",
                         "type": "uint256"
                     },
                     {
                         "internalType": "uint256",
-                        "name": "totalAmountITHD",
+                        "name": "totalAmountRICE",
                         "type": "uint256"
                     },
                     {
@@ -231,7 +231,7 @@
     },
     {
         "inputs": [],
-        "name": "AYRA",
+        "name": "USDT",
         "outputs": [
             {
                 "internalType": "address",
@@ -270,7 +270,7 @@
     },
     {
         "inputs": [],
-        "name": "ITHD",
+        "name": "RICE",
         "outputs": [
             {
                 "internalType": "address",
@@ -315,7 +315,7 @@
                 "type": "address"
             }
         ],
-        "name": "amountAyraDueTo",
+        "name": "amountUsdtDueTo",
         "outputs": [
             {
                 "internalType": "uint256",
@@ -353,7 +353,7 @@
                 "type": "address"
             }
         ],
-        "name": "amountIthdDueTo",
+        "name": "amountRiceDueTo",
         "outputs": [
             {
                 "internalType": "uint256",
@@ -397,7 +397,7 @@
     },
     {
         "inputs": [],
-        "name": "balanceAYRA",
+        "name": "balanceUSDT",
         "outputs": [
             {
                 "internalType": "uint256",
@@ -423,7 +423,7 @@
     },
     {
         "inputs": [],
-        "name": "balanceITHD",
+        "name": "balanceRICE",
         "outputs": [
             {
                 "internalType": "uint256",
@@ -802,12 +802,12 @@
             },
             {
                 "internalType": "uint256",
-                "name": "totalAmountAYRA",
+                "name": "totalAmountUSDT",
                 "type": "uint256"
             },
             {
                 "internalType": "uint256",
-                "name": "totalAmountITHD",
+                "name": "totalAmountRICE",
                 "type": "uint256"
             },
             {
@@ -1003,7 +1003,7 @@
                 "type": "address"
             }
         ],
-        "name": "setAYRAAddress",
+        "name": "setUSDTAddress",
         "outputs": [],
         "stateMutability": "nonpayable",
         "type": "function"
@@ -1016,7 +1016,7 @@
                 "type": "uint256"
             }
         ],
-        "name": "setAYRATicketPrice",
+        "name": "setUSDTTicketPrice",
         "outputs": [],
         "stateMutability": "nonpayable",
         "type": "function"
@@ -1099,7 +1099,7 @@
                 "type": "address"
             }
         ],
-        "name": "setITHDAddress",
+        "name": "setRICEAddress",
         "outputs": [],
         "stateMutability": "nonpayable",
         "type": "function"
@@ -1112,7 +1112,7 @@
                 "type": "uint256"
             }
         ],
-        "name": "setITHDTicketPrice",
+        "name": "setRICETicketPrice",
         "outputs": [],
         "stateMutability": "nonpayable",
         "type": "function"

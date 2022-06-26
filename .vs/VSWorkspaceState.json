@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\pages\\account",
+    "\\src\\pages\\account\\[address]",
+    "\\src\\pages\\marketplace",
+    "\\src\\pages\\marketplace\\assets",
+    "\\src\\pages\\marketplace\\assets\\[itemId]"
+  ],
+  "SelectedNode": "\\.babelrc",
+  "PreviewInSolutionExplorer": false
+}

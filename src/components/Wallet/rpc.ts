@@ -1,7 +1,9 @@
-import { ChainId } from '@sushiswap/core-sdk';
+import { ChainId } from '@smartdev1990/briseswap-sdk';
 
 const rpc = {
-  [ChainId.ETHEREUM]:
+  [ChainId.MAINNET]:
+    'https://serverrpc.com',
+  {/*[ChainId.ETHEREUM]:
     'https://eth-mainnet.alchemyapi.io/v2/q1gSNoSMEzJms47Qn93f9-9Xg5clkmEC',
   [ChainId.ROPSTEN]:
     'https://eth-ropsten.alchemyapi.io/v2/cidKix2Xr-snU3f6f6Zjq_rYdalKKHmW',
@@ -30,7 +32,7 @@ const rpc = {
   [ChainId.ARBITRUM]: 'https://arb1.arbitrum.io/rpc',
   [ChainId.PALM]:
     'https://palm-mainnet.infura.io/v3/da5fbfafcca14b109e2665290681e267',
-  [ChainId.CELO]: 'https://forno.celo.org',
+  [ChainId.CELO]: 'https://forno.celo.org', */}
 };
 
 export default rpc;

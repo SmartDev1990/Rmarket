@@ -15,7 +15,8 @@ export const Section = styled('div')((theme: any) => {
             display: 'flex',
             marginTop: 50,
             marginBottom: 50,
-            fontSize: 40,
+            fontSize: 24,
+            lineHeight: 1.2,
             fontWeight: 600,
             textAlign: 'center',
             '& div': {
@@ -40,12 +41,14 @@ export const Section = styled('div')((theme: any) => {
         '& .button-action': {
             display: 'flex',
             alignItems: 'center',
+            borderRadius: '10px',
             justifyContent: 'center',
             marginTop: 40,
             '& .rankingBtn': {
-                width: 250,
+                width: 180,
                 fontWeight: 700,
-                fontSize: 20,
+                borderRadius: '20px',
+                fontSize: 16,
                 color: '#fff',
                 padding: '15px 20px',
                 transition: 'all 0.3s',

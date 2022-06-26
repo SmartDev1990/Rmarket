@@ -1,6 +1,6 @@
 const AppConfig = {
-  site_name: 'NFTMagics',
-  title: 'NFTMagics',
+  site_name: 'RICESTORE',
+  title: 'RICESTORE',
   description:
     '',
   locale: 'en',

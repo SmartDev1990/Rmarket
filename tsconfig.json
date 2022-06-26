@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "sourceMap": true,
+    "declaration": true,
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -20,7 +22,7 @@
     },
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/styles/**/*", "**/*.yml", "**/*.yaml", "**/*.css", "**/*.scss", "**/*", ".d.ts"],
+  "exclude": ["node_modules", ".next", ".vscode", "out", "test", "dist", "**/*spec.ts"],
   "moduleResolution": ["node_modules", ".next", "node"]
 }

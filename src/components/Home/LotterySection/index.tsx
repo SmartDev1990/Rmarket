@@ -32,9 +32,9 @@ import { selectCurrentLotteryItem, selectLotteryList, selectTicketList } from '@
 const rx_live = /^[0-9]*[.,]?[0-9]{0,18}$/;
 const BIG_TEN = new BigNumber(10);
 const tokenAddress = [
-    Config.Token.BNB.address,
-    Config.Token.AYRA.address,
-    Config.Token.ITHD.address
+    Config.Token.BRISE.address,
+    Config.Token.USDT.address,
+    Config.Token.RICE.address
 ]
 
 const LotterySection = () => {
@@ -70,9 +70,9 @@ const LotterySection = () => {
         thirdTicketId: 0,
         startDate: 0,
         endDate: 0,
-        totalAmountBNB: 0,
-        totalAmountAYRA: 0,
-        totalAmountITHD: 0,
+        totalAmountBRISE: 0,
+        totalAmountUSDT: 0,
+        totalAmountRICE: 0,
         ticketAmount: 0,
         firstWinnerAddress: '',
         secondWinnerAddress: '',
@@ -85,9 +85,9 @@ const LotterySection = () => {
         thirdTicketId: 0,
         startDate: 0,
         endDate: 0,
-        totalAmountBNB: 0,
-        totalAmountAYRA: 0,
-        totalAmountITHD: 0,
+        totalAmountBRISE: 0,
+        totalAmountUSDT: 0,
+        totalAmountRICE: 0,
         ticketAmount: 0,
         firstWinnerAddress: '',
         secondWinnerAddress: '',
@@ -109,13 +109,13 @@ const LotterySection = () => {
         setDetailState(!detailState);
     }
     const allowanceBalanceof = async (tokenType: any, onAddress: any) => {
-        if (tokenType == Config.Token.BNB.address) return true;
-        let token_abi = Config.Token.AYRA.abi;
-        let token_address = Config.Token.AYRA.address;
+        if (tokenType == Config.Token.BRISE.address) return true;
+        let token_abi = Config.Token.USDT.abi;
+        let token_address = Config.Token.USDT.address;
 
-        if (tokenType === Config.Token.ITHD.address) {
-            token_abi = Config.Token.ITHD.abi;
-            token_address = Config.Token.ITHD.address;
+        if (tokenType === Config.Token.RICE.address) {
+            token_abi = Config.Token.RICE.abi;
+            token_address = Config.Token.RICE.address;
         }
 
         const web3 = new Web3(Web3.givenProvider);
@@ -143,22 +143,22 @@ const LotterySection = () => {
             return setApproveModal(true);
         }
         let balance = '';
-        if (buyData.buyToken === Config.Token.BNB.address) {
+        if (buyData.buyToken === Config.Token.BRISE.address) {
             balance = await web3.eth.getBalance(account);
         }
-        else if (buyData.buyToken === Config.Token.AYRA.address) {
-            const ContractAYRA = new web3.eth.Contract(
-                Config.Token.AYRA.abi as [],
-                Config.Token.AYRA.address as string
+        else if (buyData.buyToken === Config.Token.USDT.address) {
+            const ContractUSDT = new web3.eth.Contract(
+                Config.Token.USDT.abi as [],
+                Config.Token.USDT.address as string
             );
-            balance = await ContractAYRA.methods.balanceOf(account).call();
+            balance = await ContractUSDT.methods.balanceOf(account).call();
         }
-        else if (buyData.buyToken === Config.Token.ITHD.address) {
-            const ContractITHD = new web3.eth.Contract(
-                Config.Token.ITHD.abi as [],
-                Config.Token.ITHD.address as string
+        else if (buyData.buyToken === Config.Token.RICE.address) {
+            const ContractRICE = new web3.eth.Contract(
+                Config.Token.RICE.abi as [],
+                Config.Token.RICE.address as string
             );
-            balance = await ContractITHD.methods.balanceOf(account).call();
+            balance = await ContractRICE.methods.balanceOf(account).call();
         }
         let total_price = totalPrice.multipliedBy(BIG_TEN.pow(18));
 
@@ -166,7 +166,7 @@ const LotterySection = () => {
             setLoading(false);
             return notify('error', "Don't have enough token");
         }
-        if (buyData.buyToken != Config.Token.BNB.address) {
+        if (buyData.buyToken != Config.Token.BRISE.address) {
             total_price = new BigNumber(0);
         }
         try {
@@ -227,13 +227,13 @@ const LotterySection = () => {
 
     const loadLastLottery = async (lastLottery: any) => {
         const endDate = new Date(lastLottery.endDate * 1000);
-        const priceBNB = new BigNumber(lastLottery.totalAmountBNB);
-        const priceAYRA = new BigNumber(lastLottery.totalAmountAYRA);
-        const priceITHD = new BigNumber(lastLottery.totalAmountITHD);
-        const usdBNB = new BigNumber(priceBNB).multipliedBy(430).dividedBy(BIG_TEN.pow(18));
-        const usdAYRA = new BigNumber(priceAYRA).multipliedBy(0.05).dividedBy(BIG_TEN.pow(18));
-        const usdITHD = new BigNumber(priceITHD).multipliedBy(0.03).dividedBy(BIG_TEN.pow(18));
-        const totalUSD = new BigNumber(usdBNB).plus(usdAYRA).plus(usdITHD).toFixed(2, BigNumber.ROUND_DOWN);
+        const priceBRISE = new BigNumber(lastLottery.totalAmountBRISE);
+        const priceUSDT = new BigNumber(lastLottery.totalAmountUSDT);
+        const priceRICE = new BigNumber(lastLottery.totalAmountRICE);
+        const usdBRISE = new BigNumber(priceBRISE).multipliedBy(430).dividedBy(BIG_TEN.pow(18));
+        const usdUSDT = new BigNumber(priceUSDT).multipliedBy(0.05).dividedBy(BIG_TEN.pow(18));
+        const usdRICE = new BigNumber(priceRICE).multipliedBy(0.03).dividedBy(BIG_TEN.pow(18));
+        const totalUSD = new BigNumber(usdBRISE).plus(usdUSDT).plus(usdRICE).toFixed(2, BigNumber.ROUND_DOWN);
 
         setTotalUSD(totalUSD);
         setCurrentLotteryEndDate(moment(endDate).format('LLLL'));
@@ -251,7 +251,7 @@ const LotterySection = () => {
         if(lottery) {
             const endDate = new Date(lottery.endDate * 1000);
             setPreviewLotteryEndDate(moment(endDate).format('LLLL'));
-    
+
             setPreviewLotteryData(lottery);
         }
     }
@@ -274,14 +274,14 @@ const LotterySection = () => {
             Config.Lottery.abi as [],
             Config.Lottery.address as string
         )
-        const amountBnbDueTo = await LOTTERY.methods.amountBnbDueTo(account).call();
-        const amountAyraDueTo = await LOTTERY.methods.amountAyraDueTo(account).call();
-        const amountIthdDueTo = await LOTTERY.methods.amountIthdDueTo(account).call();
+        const amountBriseDueTo = await LOTTERY.methods.amountBriseDueTo(account).call();
+        const amountUsdtDueTo = await LOTTERY.methods.amountUsdtDueTo(account).call();
+        const amountRiceDueTo = await LOTTERY.methods.amountRiceDueTo(account).call();
 
         if (
-            amountBnbDueTo > 0 ||
-            amountAyraDueTo > 0 ||
-            amountIthdDueTo > 0
+            amountBRISEDueTo > 0 ||
+            amountUsdtDueTo > 0 ||
+            amountRiceDueTo > 0
         ) {
             setWinningState(true);
         }
@@ -296,11 +296,11 @@ const LotterySection = () => {
             Config.Lottery.abi as [],
             Config.Lottery.address as string
         )
-        const ContractITHD = new web3.eth.Contract(
-            Config.Token.ITHD.abi as [],
-            Config.Token.ITHD.address as string
+        const ContractRICE = new web3.eth.Contract(
+            Config.Token.RICE.abi as [],
+            Config.Token.RICE.address as string
         );
-        const balance = await ContractITHD.methods.balanceOf(Config.Lottery.address).call();
+        const balance = await ContractRICE.methods.balanceOf(Config.Lottery.address).call();
 
         try {
             await LOTTERY.methods
@@ -326,9 +326,9 @@ const LotterySection = () => {
 
     React.useEffect(() => {
         let token_price = 0;
-        if (buyData.buyToken == tokenAddress[0]) token_price = Config.bnbTicketPrice;
-        if (buyData.buyToken == tokenAddress[1]) token_price = Config.ayraTicketPrice;
-        if (buyData.buyToken == tokenAddress[2]) token_price = Config.ithdTicketPrice;
+        if (buyData.buyToken == tokenAddress[0]) token_price = Config.BRISETicketPrice;
+        if (buyData.buyToken == tokenAddress[1]) token_price = Config.UsdtTicketPrice;
+        if (buyData.buyToken == tokenAddress[2]) token_price = Config.RiceTicketPrice;
 
         const tokenPrice = new BigNumber(token_price);
         const amount = new BigNumber(buyData.ticketAmount);
@@ -432,12 +432,12 @@ const LotterySection = () => {
                             <div className='buy-content'>
                                 <div className='content-grid'>
                                     <div className='prize-title'>
-                                        <div>Prize BNB Pot</div>
+                                        <div>Prize BRISE Pot</div>
                                     </div>
-                                    {currentLotteryData.totalAmountBNB > 0 ? (
+                                    {currentLotteryData.totalAmountBRISE > 0 ? (
                                         <div className='prize-pot'>
-                                            <div>{currentLotteryData.totalAmountBNB / 1e18}</div>
-                                            <div className='token-name'>BNB</div>
+                                            <div>{currentLotteryData.totalAmountBRISE / 1e18}</div>
+                                            <div className='token-name'>BRISE</div>
                                         </div>
                                     ) : (
                                         <div className='prize-empty'>
@@ -445,12 +445,12 @@ const LotterySection = () => {
                                         </div>
                                     )}
                                     <div className='prize-title'>
-                                        <div>Prize AYRA Pot</div>
+                                        <div>Prize USDT Pot</div>
                                     </div>
-                                    {currentLotteryData.totalAmountAYRA > 0 ? (
+                                    {currentLotteryData.totalAmountUSDT > 0 ? (
                                         <div className='prize-pot'>
-                                            <div>{currentLotteryData.totalAmountAYRA / 1e18}</div>
-                                            <div className='token-name'>AYRA</div>
+                                            <div>{currentLotteryData.totalAmountUSDT / 1e18}</div>
+                                            <div className='token-name'>USDT</div>
                                         </div>
                                     ) : (
                                         <div className='prize-empty'>
@@ -458,12 +458,12 @@ const LotterySection = () => {
                                         </div>
                                     )}
                                     <div className='prize-title'>
-                                        <div>Prize ITHD Pot</div>
+                                        <div>Prize RICE Pot</div>
                                     </div>
-                                    {currentLotteryData.totalAmountITHD > 0 ? (
+                                    {currentLotteryData.totalAmountRICE > 0 ? (
                                         <div className='prize-pot'>
-                                            <div>{currentLotteryData.totalAmountITHD / 1e18}</div>
-                                            <div className='token-name'>ITHD</div>
+                                            <div>{currentLotteryData.totalAmountRICE / 1e18}</div>
+                                            <div className='token-name'>RICE</div>
                                         </div>
                                     ) : (
                                         <div className='prize-empty'>
@@ -510,9 +510,9 @@ const LotterySection = () => {
                                                         {ticket.ticketId}
                                                     </div>
                                                     <div className='buy-token'>
-                                                        {ticket.buyToken == tokenAddress[0] && 'BNB'}
-                                                        {ticket.buyToken == tokenAddress[1] && 'AYRA'}
-                                                        {ticket.buyToken == tokenAddress[2] && 'ITHD'}
+                                                        {ticket.buyToken == tokenAddress[0] && 'BRISE'}
+                                                        {ticket.buyToken == tokenAddress[1] && 'USDT'}
+                                                        {ticket.buyToken == tokenAddress[2] && 'RICE'}
                                                     </div>
                                                 </div>
                                             )
@@ -744,9 +744,9 @@ const LotterySection = () => {
                                                     {ticket.ticketId}
                                                 </div>
                                                 <div className='buy-token'>
-                                                    {ticket.buyToken == tokenAddress[0] && 'BNB'}
-                                                    {ticket.buyToken == tokenAddress[1] && 'AYRA'}
-                                                    {ticket.buyToken == tokenAddress[2] && 'ITHD'}
+                                                    {ticket.buyToken == tokenAddress[0] && 'BRISE'}
+                                                    {ticket.buyToken == tokenAddress[1] && 'USDT'}
+                                                    {ticket.buyToken == tokenAddress[2] && 'RICE'}
                                                 </div>
                                                 <div className='winning'>
                                                     {ticket.winning}
@@ -890,12 +890,12 @@ export default LotterySection;
 
 const TokenDropDownMenu = ({ setBuyData, buyData }: { setBuyData?: any, buyData?: any }) => {
     const [open, setOpen] = React.useState(false);
-    const [text, setText] = React.useState('BNB');
+    const [text, setText] = React.useState('BRISE');
 
     const list = [
-        { label: 'BNB', value: tokenAddress[0] },
-        { label: 'AYRA', value: tokenAddress[1] },
-        { label: 'ITHD', value: tokenAddress[2] },
+        { label: 'BRISE', value: tokenAddress[0] },
+        { label: 'USDT', value: tokenAddress[1] },
+        { label: 'RICE', value: tokenAddress[2] },
     ]
 
     const handleClick = () => {
@@ -933,7 +933,7 @@ const TokenDropDownMenu = ({ setBuyData, buyData }: { setBuyData?: any, buyData?
 }
 
 const TicketNumber = ({ ticketId }: { ticketId: any }) => {
-    
+
     const NumberImage = [
         <svg viewBox="0 0 32 32" width="100%" height="100%" color="text" xmlns="http://www.w3.org/2000/svg" className="sc-5a69fd5e-0 bcGsoh"><circle cx="16" cy="16" r="16" fill="#D750B2"></circle><g opacity="0.1"><path fillRule="evenodd" clipRule="evenodd" d="M24.3428 3.13232C28.9191 8.87177 28.5505 17.2573 23.2373 22.5706C17.528 28.2799 8.27148 28.2799 2.56223 22.5706C2.2825 22.2909 2.01648 22.0026 1.76416 21.7067C4.02814 27.3486 9.54881 31.3326 16 31.3326C24.4683 31.3326 31.3332 24.4677 31.3332 15.9994C31.3332 10.6078 28.5504 5.8661 24.3428 3.13232Z" fill="black"></path></g><g opacity="0.1" ><path fillRule="evenodd" clipRule="evenodd" d="M25.7713 4.18262C30.6308 10.2119 30.2607 19.061 24.6609 24.6608C19.0615 30.2602 10.2132 30.6307 4.18396 25.7722C6.99643 29.1689 11.2455 31.3329 16 31.3329C24.4683 31.3329 31.3332 24.468 31.3332 15.9997C31.3332 11.2446 29.1687 6.99508 25.7713 4.18262Z" fill="black"></path></g><g><path fillRule="evenodd" clipRule="evenodd" d="M3.48969 24.8677C0.151051 18.7651 0.974979 11.0636 6.01931 6.01927C11.0639 0.974682 18.7659 0.15093 24.8687 3.49016C22.365 1.71201 19.3046 0.666603 16 0.666603C7.53165 0.666603 0.666733 7.53152 0.666733 15.9998C0.666733 19.3041 1.7119 22.3642 3.48969 24.8677Z" fill="white"></path></g><g><path fillRule="evenodd" clipRule="evenodd" d="M2.10075 9.5143C3.77271 5.93677 6.78528 3.11129 10.4921 1.68422C10.546 1.73235 10.5987 1.78219 10.6502 1.83374C12.4838 3.66728 10.9119 5.7442 8.66145 7.99465C6.411 10.2451 4.33417 11.8169 2.50064 9.98335C2.35338 9.83609 2.22013 9.6793 2.10075 9.5143Z" fill="white"></path></g></svg>,
         <svg viewBox="0 0 32 32" width="100%" height="100%" color="text" xmlns="http://www.w3.org/2000/svg" className="sc-5a69fd5e-0 bcGsoh"><circle cx="16" cy="16" r="16" fill="#A881FC"></circle><g opacity="0.1"><path fillRule="evenodd" clipRule="evenodd" d="M24.3428 3.13232C28.9191 8.87177 28.5505 17.2573 23.2373 22.5706C17.528 28.2799 8.27148 28.2799 2.56223 22.5706C2.2825 22.2909 2.01648 22.0026 1.76416 21.7067C4.02814 27.3486 9.54881 31.3326 16 31.3326C24.4683 31.3326 31.3332 24.4677 31.3332 15.9994C31.3332 10.6078 28.5504 5.8661 24.3428 3.13232Z" fill="black"></path></g><g opacity="0.1"><path fillRule="evenodd" clipRule="evenodd" d="M25.7713 4.18262C30.6308 10.2119 30.2607 19.061 24.6609 24.6608C19.0615 30.2602 10.2132 30.6307 4.18396 25.7722C6.99643 29.1689 11.2455 31.3329 16 31.3329C24.4683 31.3329 31.3332 24.468 31.3332 15.9997C31.3332 11.2446 29.1687 6.99508 25.7713 4.18262Z" fill="black"></path></g><g><path fillRule="evenodd" clipRule="evenodd" d="M3.48969 24.8677C0.151051 18.7651 0.974979 11.0636 6.01931 6.01927C11.0639 0.974682 18.7659 0.15093 24.8687 3.49016C22.365 1.71201 19.3046 0.666603 16 0.666603C7.53165 0.666603 0.666733 7.53152 0.666733 15.9998C0.666733 19.3041 1.7119 22.3642 3.48969 24.8677Z" fill="white"></path></g><g><path fillRule="evenodd" clipRule="evenodd" d="M2.10075 9.5143C3.77271 5.93677 6.78528 3.11129 10.4921 1.68422C10.546 1.73235 10.5987 1.78219 10.6502 1.83374C12.4838 3.66728 10.9119 5.7442 8.66145 7.99465C6.411 10.2451 4.33417 11.8169 2.50064 9.98335C2.35338 9.83609 2.22013 9.6793 2.10075 9.5143Z" fill="white"></path></g></svg>,
@@ -967,7 +967,7 @@ const TicketNumber = ({ ticketId }: { ticketId: any }) => {
         case 4: ticketId = '0' + ticketId; break;
         default: ticketId;
     }
-    
+
     return (
         <>
             <NumberComponent number={ticketId.slice(0, 1)} />
