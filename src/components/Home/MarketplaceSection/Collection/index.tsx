@@ -295,10 +295,10 @@ export default function Collection() {
                                     <Collapse className='navbar-list-content' in={listOpen.chains} timeout="auto" unmountOnExit>
                                         <List component="div" disablePadding>
                                             <ListItemButton sx={{ pl: 4 }}>
-                                                <ListItemText primary="Brise Chains" />
+                                                <ListItemText primary="BSC Chains" />
                                             </ListItemButton>
                                             <ListItemButton sx={{ pl: 4 }}>
-                                                <ListItemText primary="BSC Chains" />
+                                                <ListItemText primary="ETH Chains" />
                                             </ListItemButton>
                                         </List>
                                     </Collapse>
@@ -341,3 +341,5 @@ export default function Collection() {
         </Section >
     );
 }
+
+

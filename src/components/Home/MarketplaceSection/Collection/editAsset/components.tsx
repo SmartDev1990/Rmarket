@@ -124,8 +124,8 @@ export const TokenDropDownMenu = ({ disabled, setInputData, inputData }: { disab
 
     const list = [
         { label: 'BNB', value: Config.Token.BNB.address },
-        { label: 'USDT', value: Config.Token.USDT.address },
-        { label: 'RICE', value: Config.Token.RICE.address },
+        { label: 'AYRA', value: Config.Token.AYRA.address },
+        { label: 'ITHD', value: Config.Token.ITHD.address },
     ]
 
     const handleClick = () => {

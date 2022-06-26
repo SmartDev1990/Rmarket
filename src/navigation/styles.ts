@@ -13,8 +13,8 @@ export const Header = styled('div')((theme) => {
     '& .sticky': {
       boxShadow: 'rgb(4 17 29 / 25%) 0px 0px 8px 0px',
       backgroundImage: 'none',
-      paddingRight: 20,
-      paddingLeft: 20,
+      paddingRight: 100,
+      paddingLeft: 100,
       ...((lg) && {
         paddingRight: 30,
         paddingLeft: 30,
@@ -32,26 +32,26 @@ export const Header = styled('div')((theme) => {
           marginRight: 30,
           '& img': {
             marginRight: '1rem',
-            width: 40,
-            height: 50,
+            width: 70,
+            height: 70,
             minWidth: 70
           },
           '& .logo-title': {
             cursor: 'pointer',
-            fontSize: '1.5rem',
+            fontSize: '2.3rem',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             backgroundColor: '#CA4246',
-            backgroundImage: 'linear-gradient(90deg, rgba(246,73,73,1) 0%, rgba(245,255,75,1) 49%, rgba(215,76,194,1) 100%);',
+            backgroundImage: 'linear-gradient( 45deg, #CA4246 16.666%,  #E16541 16.666%,  #E16541 33.333%,  #F18F43 33.333%,  #F18F43 50%,  #8B9862 50%,  #8B9862 66.666%,  #476098 66.666%,  #476098 83.333%,  #A7489B 83.333%)',
             backgroundSize: '100%',
             backgroundRepeat: 'repeat',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
-            animation: 'rainbow-text-simple-animation-rev 1s ease forwards',
+            animation: 'rainbow-text-simple-animation-rev 0.75s ease forwards',
             height: '100%',
             '&:hover': {
-              animation: 'rainbow-text-simple-animation 1s ease-in forwards',
+              animation: 'rainbow-text-simple-animation 0.5s ease-in forwards',
             },
             ...(sm && {
               display: 'none'
@@ -80,7 +80,7 @@ export const Header = styled('div')((theme) => {
           '& .createNFT-button': {
             display: 'flex',
             marginRight: '1rem',
-            width: 120,
+            width: 140,
             justifyContent: 'center',
             alignItems: 'center'
           }
@@ -185,7 +185,7 @@ export const CreateNFTModal = styled('div')((theme) => {
   return ({
     // backgroundImage: 'linear-gradient(rgb(255 255 255 / 9%), rgb(137 137 137 / 99%))',
     '& .modal-title': {
-      fontSize: '1.2rem',
+      fontSize: '1.7rem',
       fontWeight: 600,
       textAlign: 'center'
     },
@@ -210,6 +210,7 @@ export const CreateNFTModal = styled('div')((theme) => {
         '& button': {
           marginTop: 30,
           width: 200,
+          clipPath: 'polygon( calc(0px + 15px) 0, calc(100% - 15px) 0, 100% 50%, calc(100% - 15px) 100%, calc(0px + 15px) 100%, 0 50% )',
           display: 'inline-block',
           fontWeight: 700,
           fontSize: 20,
@@ -219,6 +220,7 @@ export const CreateNFTModal = styled('div')((theme) => {
           transition: 'all 0.3s',
           position: 'relative',
           background: '#5c49d0',
+          textTransform: 'capitalize',
           ...((sm || md) && {
             width: 140,
             fontSize: 15,
@@ -324,4 +326,4 @@ export const DropdownMenu = styled('div')(({ theme, open, width, height }: { the
       },
     }
   }
-}))
+})) 

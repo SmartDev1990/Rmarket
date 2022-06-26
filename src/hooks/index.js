@@ -6,7 +6,7 @@ import * as actions from "./_api";
 export function useEagerConnect() {
     const { activate, active } = useWeb3React();
 
-    const [tried, setTried] =  useState(false); // no more error
+    const [tried, setTried] =  useState(false);
 
     useEffect(() => {
         if (sessionStorage.close == "false") {

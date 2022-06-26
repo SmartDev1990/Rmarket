@@ -13,10 +13,10 @@ export const Section = styled('section')(({ theme }: { theme: any }) => {
         '& .section-header': {
             marginTop: 50,
             marginBottom: 50,
-            fontSize: 24,
+            fontSize: 40,
             fontWeight: 600,
             '& div': {
-                fontFamily: 'poppin-Bold'
+                fontFamily: 'poppin-bold'
             }
         },
         '& .react-multiple-carousel__arrow': {

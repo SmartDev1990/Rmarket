@@ -94,10 +94,10 @@ function HistoryChart(props: any) {
                                 if(_item.token == Config.Token.BNB.address) {
                                     price = new BigNumber(_item.price).multipliedBy(430).div(BIG_TEN.pow(18));
                                 }
-                                if(_item.token == Config.Token.USDT.address) {
+                                if(_item.token == Config.Token.AYRA.address) {
                                     price = new BigNumber(_item.price).multipliedBy(5).div(BIG_TEN.pow(20));
                                 }
-                                if(_item.token == Config.Token.RICE.address) {
+                                if(_item.token == Config.Token.ITHD.address) {
                                     price = new BigNumber(_item.price).multipliedBy(4.2).div(BIG_TEN.pow(20));
                                 }
                                 let item = {

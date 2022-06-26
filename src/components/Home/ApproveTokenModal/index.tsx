@@ -17,9 +17,9 @@ import Web3 from "web3";
 import { useWeb3React } from "@web3-react/core";
 
 const tokenImg = {
-    [Config.Token.BRISE.address]: '/images/token/bnb.png',
-    [Config.Token.USDT.address]: '/images/token/ayra.png',
-    [Config.Token.RICE.address]: '/images/token/ithd.png'
+    [Config.Token.BNB.address]: '/images/token/bnb.png',
+    [Config.Token.AYRA.address]: '/images/token/ayra.png',
+    [Config.Token.ITHD.address]: '/images/token/ithd.png'
 }
 
 export default function ApproveTokenModal({ modal, setModal, approveTokenType, onAddress }: { modal: any, setModal: any, approveTokenType: any, onAddress: any }) {
@@ -28,14 +28,14 @@ export default function ApproveTokenModal({ modal, setModal, approveTokenType, o
     const theme = useTheme();
     const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
 
-    let token_abi = Config.Token.USDT.abi;
-    let token_address = Config.Token.USDT.address;
-    let token_name = 'USDT';
+    let token_abi = Config.Token.AYRA.abi;
+    let token_address = Config.Token.AYRA.address;
+    let token_name = 'AYRA';
 
-    if (approveTokenType === Config.Token.RICE.address) {
-        token_abi = Config.Token.RICE.abi;
-        token_address = Config.Token.RICE.address;
-        token_name = 'RICE';
+    if (approveTokenType === Config.Token.ITHD.address) {
+        token_abi = Config.Token.ITHD.abi;
+        token_address = Config.Token.ITHD.address;
+        token_name = 'ITHD';
     }
 
     const notify = React.useCallback((type, message) => {
@@ -104,3 +104,4 @@ export default function ApproveTokenModal({ modal, setModal, approveTokenType, o
         </Dialog>
     );
 }
+

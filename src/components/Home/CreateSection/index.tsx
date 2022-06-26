@@ -296,8 +296,8 @@ const MintStep = ({ handleNext, ipfsImage, hastag }: { handleNext: any, ipfsImag
     }, []);
     const tokenType = [
         Config.Token.BNB.address,
-        Config.Token.USDT.address,
-        Config.Token.RICE.address,
+        Config.Token.AYRA.address,
+        Config.Token.ITHD.address,
     ]
     const [mintData, setMintData] = React.useState({
         collectionId: 0,
@@ -350,18 +350,18 @@ const MintStep = ({ handleNext, ipfsImage, hastag }: { handleNext: any, ipfsImag
                 balance = await web3.eth.getBalance(account);
             }
             else if (mintData.mint_token_type === 1) {
-                const ContractUSDT = new web3.eth.Contract(
-                    Config.Token.USDT.abi as [],
-                    Config.Token.USDT.address as string
+                const ContractAYRA = new web3.eth.Contract(
+                    Config.Token.AYRA.abi as [],
+                    Config.Token.AYRA.address as string
                 );
-                balance = await ContractUSDT.methods.balanceOf(account).call();
+                balance = await ContractAYRA.methods.balanceOf(account).call();
             }
             else if (mintData.mint_token_type === 2) {
-                const ContractRICE = new web3.eth.Contract(
-                    Config.Token.RICE.abi as [],
-                    Config.Token.RICE.address as string
+                const ContractITHD = new web3.eth.Contract(
+                    Config.Token.ITHD.abi as [],
+                    Config.Token.ITHD.address as string
                 );
-                balance = await ContractRICE.methods.balanceOf(account).call();
+                balance = await ContractITHD.methods.balanceOf(account).call();
             }
             let totalPrice = new BigNumber(total_price).multipliedBy(BIG_TEN.pow(18));
 
@@ -413,14 +413,14 @@ const MintStep = ({ handleNext, ipfsImage, hastag }: { handleNext: any, ipfsImag
 
     const approveTokenToNFT = async () => {
         const web3 = new Web3(library.provider);
-        const ContractRICE = new web3.eth.Contract(
-            Config.Token.RICE.abi,
-            Config.Token.RICE.address
+        const ContractITHD = new web3.eth.Contract(
+            Config.Token.ITHD.abi,
+            Config.Token.ITHD.address
         );
 
-        const ContractUSDT = new web3.eth.Contract(
-            Config.Token.USDT.abi,
-            Config.Token.USDT.address
+        const ContractAYRA = new web3.eth.Contract(
+            Config.Token.AYRA.abi,
+            Config.Token.AYRA.address
         );
 
         const approve = async (contract: any) => {
@@ -433,20 +433,20 @@ const MintStep = ({ handleNext, ipfsImage, hastag }: { handleNext: any, ipfsImag
                     .approve(Config.NFT.address, '100000000000000000000000000')
                     .send({ from: account })
                     .once('transactionHash', () => {
-                        notify('info', 'Approving purchase with RICE');
+                        notify('info', 'Approving purchase with ITHD');
                     })
                     .then((_tx: any) => {
-                        notify('success', 'You have approved the purchase  with RICE');
+                        notify('success', 'You have approved the purchase  with ITHD');
                     })
                     .catch((e: any) => {
                         if (e.code === 4001) {
-                            notify('error', 'You need to approve the spending of RICE in your wallet');
+                            notify('error', 'You need to approve the spending of ITHD in your wallet');
                         }
                     });
             }
         }
-        await approve(ContractRICE);
-        await approve(ContractUSDT);
+        await approve(ContractITHD);
+        await approve(ContractAYRA);
     }
 
     React.useEffect(() => {
@@ -682,8 +682,8 @@ const TokenDropDownMenu = ({ setMintData, mintData }: { setMintData: any, mintDa
 
     const list = [
         { label: 'BNB', value: 0 },
-        { label: 'USDT', value: 1 },
-        { label: 'RICE', value: 2 },
+        { label: 'AYRA', value: 1 },
+        { label: 'ITHD', value: 2 },
     ]
 
     const handleClick = () => {

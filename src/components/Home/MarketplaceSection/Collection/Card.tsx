@@ -295,11 +295,11 @@ const NFTCard = ({ item, empty, width, height, timeAgo, account, web3 }: { item:
 
     if (item.saleToken == 1) {
         token_img = '/images/token/ayra.png';
-        token_name = 'USDT';
+        token_name = 'AYRA';
     }
     if (item.saleToken == 2) {
         token_img = '/images/token/ithd.png';
-        token_name = 'RICE';
+        token_name = 'ITHD';
     }
 
     const imgLoader = ({ src, width, quality }: { src: any, width?: any, quality?: any }) => {

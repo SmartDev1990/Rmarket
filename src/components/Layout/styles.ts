@@ -28,3 +28,4 @@ export const LayoutSection = styled('div')(({theme}) => {
         }
     })
 })
+

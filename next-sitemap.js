@@ -5,9 +5,9 @@
 module.exports = {
   // !STARTERCONF Change the siteUrl
   /** Without additional '/' on the end, e.g. https://theodorusclarence.com */
-  siteUrl: 'https://nftmagics.io',
+  siteUrl: process.env.SITE_URL || 'https://example.com',
   generateRobotsTxt: true,
   robotsTxtOptions: {
     policies: [{ userAgent: '*', allow: '/' }],
-  },
+  }
 };

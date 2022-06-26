@@ -711,12 +711,12 @@ export const SwitchButton = styled('span')(
     height: 20px;
     margin: 10px;
     cursor: pointer;
-
+  
     &.${switchUnstyledClasses.disabled} {
       opacity: 0.5;
       cursor: not-allowed;
     }
-
+  
     & .${switchUnstyledClasses.track} {
       background: ${theme.palette.mode === 'dark' ? grey[600] : grey[400]};
       border-radius: 10px;
@@ -725,7 +725,7 @@ export const SwitchButton = styled('span')(
       width: 100%;
       position: absolute;
     }
-
+  
     & .${switchUnstyledClasses.thumb} {
       display: block;
       width: 14px;
@@ -737,24 +737,24 @@ export const SwitchButton = styled('span')(
       position: relative;
       transition: all 200ms ease;
     }
-
+  
     &.${switchUnstyledClasses.focusVisible} .${switchUnstyledClasses.thumb} {
       background-color: ${grey[500]};
       box-shadow: 0 0 1px 8px rgba(0, 0, 0, 0.25);
     }
-
+  
     &.${switchUnstyledClasses.checked} {
       .${switchUnstyledClasses.thumb} {
         left: 22px;
         top: 3px;
         background-color: #fff;
       }
-
+  
       .${switchUnstyledClasses.track} {
         background: ${blue[500]};
       }
     }
-
+  
     & .${switchUnstyledClasses.input} {
       cursor: inherit;
       position: absolute;

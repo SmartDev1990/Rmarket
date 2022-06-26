@@ -2,22 +2,22 @@ import { IChainData } from './types';
 
 const supportedChains: IChainData[] = [
   {
-    name: 'BRISE CHAIN MAINNET',
-    short_name: 'brise',
-    chain: 'BRISE',
+    name: 'Ethereum Mainnet',
+    short_name: 'eth',
+    chain: 'ETH',
     network: 'mainnet',
-    chain_id: MAINNET,
-    network_id: 32520,
-    rpc_url: 'https://serverrpc.com',
+    chain_id: 1,
+    network_id: 1,
+    rpc_url: 'https://mainnet.infura.io/v3/%API_KEY%',
     native_currency: {
-      symbol: 'BRISE',
-      name: 'Brise',
+      symbol: 'ETH',
+      name: 'Ethereum',
       decimals: '18',
       contractAddress: '',
       balance: '',
     },
   },
-  {/* {
+  {
     name: 'Ethereum Ropsten',
     short_name: 'rop',
     chain: 'ETH',
@@ -225,7 +225,7 @@ const supportedChains: IChainData[] = [
       contractAddress: '',
       balance: '',
     },
-  }, */}
+  },
 ];
 
 export default supportedChains;

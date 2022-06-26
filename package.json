@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build",
+    "postbuild": "next-sitemap",
+    "export": "next export",
     "start": "next start -p $PORT",
     "lint": "next lint",
     "lint:fix": "eslint src --fix && yarn format",
@@ -28,7 +30,6 @@
     "@mui/material": "^5.4.1",
     "@mui/styled-engine-sc": "^5.4.1",
     "@mui/styles": "^5.4.1",
-    "@smartdev1990/briseswap-sdk": "^1.0.3",
     "@sushiswap/core-sdk": "^1.0.0-canary.34",
     "@toruslabs/torus-embed": "^1.20.4",
     "@types/aos": "^3.0.4",

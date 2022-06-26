@@ -19,7 +19,7 @@ export default function NFTDetailSection() {
                     </div>
                     <div className='cell-content'>
                         Add the Binance Smart Chain network to the compatible wallet you are going to use. 
-                        Add <span color='#39befd'>RICE</span> and <span style={{color: '#39befd'}}>Usdt Bsc</span> as custom tokens. 
+                        Add <span color='#39befd'>ITHD</span> and <span style={{color: '#39befd'}}>Ayra Bsc</span> as custom tokens. 
                         Load your wallet with <span color='#39befd'>BNB</span>.
                     </div>
                 </div>

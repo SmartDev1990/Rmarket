@@ -1,11 +1,11 @@
 import { AbstractConnector } from '@web3-react/abstract-connector';
-import { ChainId } from '@smartdev1990/briseswap-sdk';
+import { ChainId } from '@sushiswap/core-sdk';
 import { InjectedConnector } from '@web3-react/injected-connector';
 import { NetworkConnector } from './NetworkConnector';
 import RPC from './rpc';
 
 export const network = new NetworkConnector({
-  defaultChainId: 32520,
+  defaultChainId: 1,
   urls: RPC,
 });
 
@@ -28,15 +28,15 @@ export interface WalletInfo {
 }
 
 export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
-  INJECTED: {
-    connector: injected,
-    name: 'Injected',
-    iconName: 'injected.svg',
-    description: 'Injected web3 provider.',
-    href: null,
-    color: '#010101',
-    primary: true,
-  },
+  // INJECTED: {
+  //   connector: injected,
+  //   name: 'Injected',
+  //   iconName: 'injected.svg',
+  //   description: 'Injected web3 provider.',
+  //   href: null,
+  //   color: '#010101',
+  //   primary: true,
+  // },
   METAMASK: {
     connector: injected,
     name: 'MetaMask',

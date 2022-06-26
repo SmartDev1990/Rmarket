@@ -56,7 +56,7 @@ export default function CreateNFTOptionModal() {
                 <CreateNFTModal>
                     <div className="modal-body">
                         <div id="create-nft-modal-title" className='modal-title'>
-                            Create or draw your NFT
+                            Change the World with your design
                         </div>
                         <div className='modal-content'>
                             <Link href={'/createself'}>

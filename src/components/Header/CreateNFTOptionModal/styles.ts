@@ -19,6 +19,7 @@ export const CreateNFTModal = styled('div')(({theme}: {theme:any}) => {
       position: 'absolute',
       width: '100%',
       height: '100%',
+      animation: 'o-rotate-360 linear 12s infinite',
       ...(sm && {
         display: 'none'
       }),
@@ -66,7 +67,7 @@ export const CreateNFTModal = styled('div')(({theme}: {theme:any}) => {
       position: 'relative',
       // border: '2px solid transparent',
       /* background-origin: border-box, */
-      // backgroundClip: 'padding-box, border-box',
+      backgroundClip: 'padding-box, border-box',
       ...((md || sm)&& {
         height: '100vh',
         width: '100vw'
@@ -105,7 +106,7 @@ export const CreateNFTModal = styled('div')(({theme}: {theme:any}) => {
           '& button': {
             marginTop: 30,
             width: 200,
-            borderRadius: '50px',
+            clipPath: 'polygon( calc(0px + 15px) 0, calc(100% - 15px) 0, 100% 50%, calc(100% - 15px) 100%, calc(0px + 15px) 100%, 0 50% )',
             display: 'inline-block',
             fontWeight: 700,
             fontSize: 20,
@@ -115,6 +116,7 @@ export const CreateNFTModal = styled('div')(({theme}: {theme:any}) => {
             transition: 'all 0.3s',
             position: 'relative',
             background: '#5c49d0',
+            textTransform: 'capitalize',
             ...((sm || md) && {
               width: 160,
               fontSize: 15,

@@ -13,9 +13,9 @@ import { selectTopMarketItems } from '@/store/selectors';
 import Config from '@/config/app';
 
 const tokenImg = {
-    [Config.Token.BRISE.address]: '/images/token/bnb.png',
-    [Config.Token.USDT.address]: '/images/token/ayra.png',
-    [Config.Token.RICE.address]: '/images/token/ithd.png'
+    [Config.Token.BNB.address]: '/images/token/bnb.png',
+    [Config.Token.AYRA.address]: '/images/token/ayra.png',
+    [Config.Token.ITHD.address]: '/images/token/ithd.png'
 }
 export default function TopNFTs() {
     const router = useRouter();

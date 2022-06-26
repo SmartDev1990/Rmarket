@@ -14,12 +14,12 @@ export function getChainData(chainId?: number): IChainData {
     (chain: any) => chain.chain_id === chainId
   )[0];
 
-  if (chainId !== 32520) {
+  if (chainId !== 56) {
     window.ethereum.request({
       method: 'wallet_switchEthereumChain',
       params: [
         {
-          chainId: '32520',
+          chainId: '0x38',
         },
       ],
     });

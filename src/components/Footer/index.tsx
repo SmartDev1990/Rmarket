@@ -2,7 +2,8 @@ import * as React from 'react';
 import { Section } from './styles';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import TelegramIcon from '@mui/icons-material/Telegram';
+import SickIcon from '@mui/icons-material/Sick';
+import SlideshowIcon from '@mui/icons-material/Slideshow';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 
 export default function Footer() {
@@ -30,14 +31,15 @@ export default function Footer() {
                         <div className='footer-section-header'>Join the community</div>
                         <div className='footer-text'>
                             <button className='subBtn'><TwitterIcon /></button>
-                            <button className='subBtn'><TelegramIcon /></button>
                             <button className='subBtn'><InstagramIcon /></button>
+                            <button className='subBtn'><SickIcon /></button>
+                            <button className='subBtn'><SlideshowIcon /></button>
                             <button className='subBtn'><MailOutlineIcon /></button>
                         </div>
                     </div>
                 </div>
                 <div className='footer-link'>
-                    <div className='footer-com'>© 2022 RiceProtocol. Inc</div>
+                    <div className='footer-com'>© 2022 Networks, Inc</div>
                     <div className='footer-sublnk'>
                         <a className='mr-2' href="/privacy">Privacy Policy</a>
                         <a href="/tos">Terms of Service</a>

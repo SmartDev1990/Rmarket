@@ -47,8 +47,8 @@ import PageLoading from '@/components/PageLoading';
 
 const tokenImg = {
     [Config.Token.BNB.address]: '/images/token/bnb.png',
-    [Config.Token.USDT.address]: '/images/token/ayra.png',
-    [Config.Token.RICE.address]: '/images/token/ithd.png'
+    [Config.Token.AYRA.address]: '/images/token/ayra.png',
+    [Config.Token.ITHD.address]: '/images/token/ithd.png'
 }
 export default function Assets() {
     const router = useRouter()
@@ -114,12 +114,12 @@ export default function Assets() {
     }, []);
     const allowanceBalanceof = async (tokenType: any, onAddress: any) => {
         if (tokenType == Config.Token.BNB.address) return true;
-        let token_abi = Config.Token.USDT.abi;
-        let token_address = Config.Token.USDT.address;
+        let token_abi = Config.Token.AYRA.abi;
+        let token_address = Config.Token.AYRA.address;
 
-        if (tokenType === Config.Token.RICE.address) {
-            token_abi = Config.Token.RICE.abi;
-            token_address = Config.Token.RICE.address;
+        if (tokenType === Config.Token.ITHD.address) {
+            token_abi = Config.Token.ITHD.abi;
+            token_address = Config.Token.ITHD.address;
         }
 
         const web3 = new Web3(Web3.givenProvider);
@@ -230,8 +230,8 @@ export default function Assets() {
             console.log(marketItem)
             const salePrice = marketItem.price ? fromWei(web3, marketItem.price) : 0;
             let decimal = Config.bnbToUsd;
-            if (marketItem.saleToken == Config.Token.USDT.address) decimal = Config.ayraToUsd;
-            if (marketItem.saleToken == Config.Token.RICE.address) decimal = Config.ithdToUsd;
+            if (marketItem.saleToken == Config.Token.AYRA.address) decimal = Config.ayraToUsd;
+            if (marketItem.saleToken == Config.Token.ITHD.address) decimal = Config.ithdToUsd;
             const usdPrice = new BigNumber(salePrice).multipliedBy(decimal).toFixed(2, BigNumber.ROUND_DOWN).toString();
             handleItemChange('collectionId', marketItem.collectionId);
             handleItemChange('collectionName', marketItem.collectionName);
