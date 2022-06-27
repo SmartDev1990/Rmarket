@@ -31,13 +31,13 @@ export default {
         abi: abi.LOTTERY
     },
     InfuraId: 'b596546b8ae94aa883f9830c1fw90767f',
-    brisePrice: 0.00000035,
+    brisePrice: 100000000000000000000,
     usdtPrice: 1,
-    ricePrice: 100,
+    ricePrice: 1,
     briseTicketPrice: 1050000000000000,
     usdtTicketPrice: 10000000000000000000,
     riceTicketPrice: 14500000000000000000,
-    briseToUsd: 0.000001,
+    briseToUsd: 0,0000004,
     usdtToUsd: 1,
-    riceToUsd: 100,
+    riceToUsd: 10,
 }
