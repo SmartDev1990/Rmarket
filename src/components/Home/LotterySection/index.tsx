@@ -383,7 +383,7 @@ const LotterySection = () => {
                 <div className='content'>
                     <div className='bg'></div>
                     <div className='title'>
-                        The NFTMaigcs Lottery
+                        The Rice Store Lottery
                     </div>
                     <div className='price'>${totalUSD}</div>
                     <div className='text'>
