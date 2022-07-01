@@ -169,13 +169,13 @@ export default function FeaturedNFTSection() {
                                             <div className='content'>
                                                 <div>
                                                 {/* {featuredItem.name || <Skeleton variant="text" />} */}
-                                                <p>BoredCat (BC)</p>
+                                                <p>MoushyFam</p>
                                                 </div>
-                                                <Link href={'/createself'}>
+                                                <Link href={'https://brise.miidas.com/collection/mint/62bdb72f1996f9ddfdb9d520'}>
                                                 <div>
                                                 {/* {featuredItem.description || <Skeleton variant="text" />} */}
                                                 <Button className='mintBtn'>
-                                                    MINT BC
+                                                    Join Presale
                                                 </Button></div>
                                                 </Link>
                                             </div>

@@ -145,13 +145,13 @@ class MiniRpcProvider implements AsyncSendable {
 
   public readonly request = async (
     method: string | { method: string; params: unknown[] },
-    params?: unknown[] 
+    params?: unknown[]
   ): Promise<unknown> => {
     if (typeof method !== 'string') {
       return this.request(method.method, method.params);
     }
     if (method === 'eth_chainId') {
-      return `0x${this.chainId.toString(16)}`;
+      return `0x${this.chainId.toString(18)}`;
     }
     const promise = new Promise((resolve, reject) => {
       this.batch.push({

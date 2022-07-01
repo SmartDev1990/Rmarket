@@ -169,7 +169,7 @@ export default function PutListModal({ modal, setModal, item, handleLoading }: {
                             Your wallet balance is below 0.05 BRISE. The next steps require small transaction fees, so you may have to deposit additional funds to complete them
                         </div>
                         <div className='progress-detail'>
-                            {/* <Accordion expanded={summaryExpanded === 'panel1'} onChange={handleSummaryChange('panel1')} disableGutters elevation={0}>
+                            <Accordion expanded={summaryExpanded === 'panel1'} onChange={handleSummaryChange('panel1')} disableGutters elevation={0}>
                                 <AccordionSummary aria-controls="panel1d-content" id="panel1d-header" expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '0.9rem' }} />}>
                                     <div className='title'>
                                         <CircularProgress size={24} />
@@ -181,7 +181,7 @@ export default function PutListModal({ modal, setModal, item, handleLoading }: {
 
                                     Waiting for initialization...
                                 </AccordionDetails>
-                            </Accordion> */}
+                            </Accordion>
                             <Accordion expanded={summaryExpanded === 'panel2'} onChange={handleSummaryChange('panel2')} disableGutters elevation={0}>
                                 <AccordionSummary aria-controls="panel2d-content" id="panel2d-header" expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '0.9rem' }} />}>
                                     <div className='title'>
