@@ -22,7 +22,7 @@ import Config from '@/config/app';
 import Web3 from "web3";
 import { useWeb3React } from "@web3-react/core";
 
-const ipfs = ipfsHttpClient({ url: 'https://ipfs.infura.io:5001/api/v0' })
+const ipfs = ipfsHttpClient({ url: 'https://ipfs.infura.io/api/v0' })
 
 export default function CreateCollection() {
     const router = useRouter()
@@ -128,7 +128,7 @@ export default function CreateCollection() {
             if (!logo_url) return notify('error', 'please choose collection logo image');
             if (!banner_url) return notify('error', 'please choose collection banner image');
             if (!featured_url) return notify('error', 'please choose collection featured image');
-            
+
             try {
                 if (inputData.itemId) {
                     await Market.methods.updateCollectionItem(
@@ -346,5 +346,3 @@ export default function CreateCollection() {
         </Section >
     );
 }
-
-

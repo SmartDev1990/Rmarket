@@ -168,10 +168,10 @@ export const HistoryFilterMenu = ({ itemId }: { itemId: any }) => {
 
 export const TokenDropDownMenu = ({ disabled, setInputData, inputData }: { disabled: any, setInputData: any, inputData: any }) => {
     const [open, setOpen] = React.useState(false);
-    const [text, setText] = React.useState('BNB');
+    const [text, setText] = React.useState('BRISE');
 
     const list = [
-        { label: 'BNB', value: Config.Token.BRISE.address },
+        { label: 'BRISE', value: Config.Token.BRISE.address },
         { label: 'USDT', value: Config.Token.USDT.address },
         { label: 'RICE', value: Config.Token.RICE.address },
     ]

@@ -72,9 +72,9 @@ export default function HeaderComponent(props: any) {
           {/* <div className='dropMenuIcon menu-button' onClick={handleDropMenu}>
             {dropMenuOpen ? <CloseIcon /> : <MenuIcon />}
           </div> */}
-          <div className='themeIcon' onClick={colorMode.toggleColorMode}>
+          {/* <div className='themeIcon' onClick={colorMode.toggleColorMode}>
             {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
-          </div>
+          </div> */}
           <div className='avatarIcon'>
             <Account />
           </div>

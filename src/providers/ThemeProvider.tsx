@@ -9,11 +9,11 @@ export const ColorModeContext = React.createContext({ toggleColorMode: () => {} 
 
 export default function MaterialThemeProvider(props: ThemeProviderProps) {
 
-  const [mode, setMode] = React.useState<'light' | 'dark'>('dark');
+  const [mode, setMode] = React.useState<'light' | 'light'>('light');
   const colorMode = useMemo(
     () => ({
       toggleColorMode: () => {
-        setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
+        setMode((prevMode) => (prevMode === 'light' ? 'light' : 'light'));
       },
     }),
     [],

@@ -214,11 +214,11 @@ export default function SidebarWalletList(props: any) {// the function is being 
             Config.Token.USDT.address
         );
 
-        const bnbValue = await web3.eth.getBalance(account);
+        const briseValue = await web3.eth.getBalance(account);
         const riceValue = await ContractRICE.methods.balanceOf(account).call();
         const usdtValue = await ContractUSDT.methods.balanceOf(account).call();
 
-        setBRISEValue(convertValuetoString(fromWei(web3, bnbValue)));
+        setBRISEValue(convertValuetoString(fromWei(web3, briseValue)));
         setRICEValue(convertValuetoString(fromWei(web3, riceValue)));
         setUSDTValue(convertValuetoString(fromWei(web3, usdtValue)));
 
@@ -234,7 +234,7 @@ export default function SidebarWalletList(props: any) {// the function is being 
 
         try {
             const reward = await Market.methods.rewards(account).call();
-            setRewardBRISEValue(convertValuetoString(fromWei(web3, reward.bnb)).toString());
+            setRewardBRISEValue(convertValuetoString(fromWei(web3, reward.brise)).toString());
             setRewardRICEValue(convertValuetoString(fromWei(web3, reward.usdt)).toString());
             setRewardUSDTValue(convertValuetoString(fromWei(web3, reward.rice)).toString());
         } catch (err: any) {
@@ -272,7 +272,7 @@ export default function SidebarWalletList(props: any) {// the function is being 
         } else {
             setIsSelectingWallet(true);
         }
-        setAffiliateLink(`https://RICESTORE-frontend.herokuapp.com/?ref=${account}`);
+        setAffiliateLink(`https://ricenft.store/?ref=${account}`);
     }, [account, active, error])
 
     return (

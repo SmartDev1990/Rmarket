@@ -36,7 +36,7 @@ import { selectCollectionList } from "@/store/selectors";
 
 const CreateCustom = dynamic(() => import('./createCustom'), {ssr: false});
 
-const ipfs = ipfsHttpClient({ url: 'https://ipfs.infura.io:5001/api/v0' })
+const ipfs = ipfsHttpClient({ url: 'https://ipfs.infura.io/api/v0' })
 
 const BIG_TEN = new BigNumber(10);
 
@@ -455,13 +455,13 @@ const MintStep = ({ handleNext, ipfsImage, hastag }: { handleNext: any, ipfsImag
         const hastag_flag = mintData.hastag_flag;
         let price = new BigNumber(0);
 
-        if ((mint_token_type == 0) && hastag_flag) price = new BigNumber(Config.bnbPrice).multipliedBy(2);
-        if ((mint_token_type == 0) && !hastag_flag) price = new BigNumber(Config.bnbPrice);
-        if ((mint_token_type == 1) && hastag_flag) price = new BigNumber(Config.ayraPrice).multipliedBy(2);
-        if ((mint_token_type == 1) && !hastag_flag) price = new BigNumber(Config.ayraPrice);
-        if ((mint_token_type == 2) && hastag_flag) price = new BigNumber(Config.ithdPrice).multipliedBy(2);
-        if ((mint_token_type == 2) && !hastag_flag) price = new BigNumber(Config.ithdPrice);
-        
+        if ((mint_token_type == 0) && hastag_flag) price = new BigNumber(Config.brisePrice).multipliedBy(2);
+        if ((mint_token_type == 0) && !hastag_flag) price = new BigNumber(Config.brisePrice);
+        if ((mint_token_type == 1) && hastag_flag) price = new BigNumber(Config.usdtPrice).multipliedBy(2);
+        if ((mint_token_type == 1) && !hastag_flag) price = new BigNumber(Config.usdtPrice);
+        if ((mint_token_type == 2) && hastag_flag) price = new BigNumber(Config.ricePrice).multipliedBy(2);
+        if ((mint_token_type == 2) && !hastag_flag) price = new BigNumber(Config.ricePrice);
+
         let totalPrice = new BigNumber(price).multipliedBy(amount).dividedBy(BIG_TEN.pow(18));
         setTotalPrice(totalPrice.toString());
     }, [mintData]);
@@ -678,10 +678,10 @@ const HasTagDropDownMenu = ({ setImgHastag, imgHastag, disabled }: { setImgHasta
 }
 const TokenDropDownMenu = ({ setMintData, mintData }: { setMintData: any, mintData: any }) => {
     const [open, setOpen] = React.useState(false);
-    const [text, setText] = React.useState('BNB');
+    const [text, setText] = React.useState('BRISE');
 
     const list = [
-        { label: 'BNB', value: 0 },
+        { label: 'BRISE', value: 0 },
         { label: 'USDT', value: 1 },
         { label: 'RICE', value: 2 },
     ]
@@ -768,4 +768,3 @@ const CollectionDropDownMenu = ({ setMintData, mintData }: { setMintData: any, m
         </DropdownMenu>
     )
 }
-

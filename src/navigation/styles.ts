@@ -42,17 +42,12 @@ export const Header = styled('div')((theme) => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            backgroundColor: '#CA4246',
-            backgroundImage: 'linear-gradient(90deg, rgba(246,73,73,1) 0%, rgba(245,255,75,1) 49%, rgba(215,76,194,1) 100%);',
+            backgroundColor: 'black',
+            backgroundImage: 'black',
             backgroundSize: '100%',
             backgroundRepeat: 'repeat',
             WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            animation: 'rainbow-text-simple-animation-rev 1s ease forwards',
             height: '100%',
-            '&:hover': {
-              animation: 'rainbow-text-simple-animation 1s ease-in forwards',
-            },
             ...(sm && {
               display: 'none'
             })

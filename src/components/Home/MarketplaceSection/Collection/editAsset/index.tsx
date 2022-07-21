@@ -201,7 +201,7 @@ export default function EditAssets() {
     React.useEffect(() => {
         if (marketItem) {
             const salePrice = marketItem.price ? fromWei(web3, marketItem.price) : 0;
-            let decimal = Config.bnbToUsd;
+            let decimal = Config.briseToUsd;
             if(marketItem.saleToken == Config.Token.USDT.address) decimal = Config.ayraToUsd;
             if(marketItem.saleToken == Config.Token.RICE.address) decimal = Config.ithdToUsd;
             const usdPrice = new BigNumber(salePrice).multipliedBy(decimal).toFixed(2, BigNumber.ROUND_DOWN).toString();

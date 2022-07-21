@@ -12,6 +12,13 @@ export const Section = styled('div')(({theme}) => {
         alignItems: 'center',
         justifyContent: 'center',
         padding: '5%',
+        '& .featured-image-card': {
+            borderRadius: 15,
+            background: 'black',
+            alignItems: 'center',
+            color: 'rgb(32, 129, 226)',
+            textDecoration: 'none',
+          },
         '& .section-header': {
             marginTop: 50,
             paddingBottom: 50,

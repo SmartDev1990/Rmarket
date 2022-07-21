@@ -34,7 +34,7 @@ import BigNumber from 'bignumber.js';
 import { actionGetCollectionList } from "@/store/actions/collection";
 import { selectCollectionList } from "@/store/selectors";
 
-const ipfs = ipfsHttpClient({ url: 'https://ipfs.infura.io:5001/api/v0' })
+const ipfs = ipfsHttpClient({ url: 'https://ipfs.infura.io/api/v0' })
 
 const BIG_TEN = new BigNumber(10);
 
@@ -457,10 +457,10 @@ const MintStep = ({ handleNext, ipfsImage, hastag }: { handleNext: any, ipfsImag
 
         if ((mint_token_type == 0) && hastag_flag) price = new BigNumber(Config.brisePrice).multipliedBy(2);
         if ((mint_token_type == 0) && !hastag_flag) price = new BigNumber(Config.brisePrice);
-        if ((mint_token_type == 1) && hastag_flag) price = new BigNumber(Config.ayraPrice).multipliedBy(2);
-        if ((mint_token_type == 1) && !hastag_flag) price = new BigNumber(Config.ayraPrice);
-        if ((mint_token_type == 2) && hastag_flag) price = new BigNumber(Config.ithdPrice).multipliedBy(2);
-        if ((mint_token_type == 2) && !hastag_flag) price = new BigNumber(Config.ithdPrice);
+        if ((mint_token_type == 1) && hastag_flag) price = new BigNumber(Config.usdtPrice).multipliedBy(2);
+        if ((mint_token_type == 1) && !hastag_flag) price = new BigNumber(Config.usdtPrice);
+        if ((mint_token_type == 2) && hastag_flag) price = new BigNumber(Config.ricePrice).multipliedBy(2);
+        if ((mint_token_type == 2) && !hastag_flag) price = new BigNumber(Config.ricePrice);
 
         let totalPrice = new BigNumber(price).multipliedBy(amount).dividedBy(BIG_TEN.pow(18));
         setTotalPrice(totalPrice.toString());

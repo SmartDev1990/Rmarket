@@ -159,7 +159,7 @@ export default function FeaturedNFTSection() {
                                         <footer className='featured-image-text-area'>
                                             <div className='logo'>
                                               <Skeleton variant="circular" animation="wave" />
-                                              <img src="/images/apemap.gif" />
+                                              <img src="/images/nft5.png" />
                                                 {  /* {
                                                     featuredItem.logo && (
                                                         <Image loader={imgLoader} src={featuredItem.logo} layout="fill" objectFit="fill" />
@@ -169,9 +169,9 @@ export default function FeaturedNFTSection() {
                                             <div className='content'>
                                                 <div>
                                                 {/* {featuredItem.name || <Skeleton variant="text" />} */}
-                                                <p>MoushyFam</p>
+                                                <p>Bored Cats</p>
                                                 </div>
-                                                <Link href={'https://brise.miidas.com/collection/mint/62bdb72f1996f9ddfdb9d520'}>
+                                                <Link href={'https://app.youngparrotnft.com/launchpads/bored-cat-nft'}>
                                                 <div>
                                                 {/* {featuredItem.description || <Skeleton variant="text" />} */}
                                                 <Button className='mintBtn'>
